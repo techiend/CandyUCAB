@@ -2,16 +2,24 @@
 
     include ("Main/Comunes.php");
 
-    $modo = isset($_GET['modo']) ? $_GET['modo'] : 'default';
-    $error = isset($_GET['error']) ? $_GET['error'] : '';
+    $error = isset($_GET['error']) ? $_GET['error'] : 'default';
 
-    switch ($error){
-        case 'camposVacios':
-            $error = 'mmgvo, se serio, llena tu vaina';
+    switch ($error) {
+        case '1':
+            $error = 'Usuario o Contraseña incorrectos';
+            break;
+        case '2':
+            $error = 'Debe llenar todos los campos';
+            break;
+        case '3':
+            $error = 'Debes iniciar sesion primero';
             break;
         default:
+            unset($error);
             break;
     }
+
+    $modo = isset($_GET['modo']) ? $_GET['modo'] : 'default';
 
     switch ($modo) {
         case 'login':
@@ -25,28 +33,43 @@
                     $acceso->Login();
 
                 }else {
-                    header('location: login.php?error=camposVacios');
+                    header('location: login.php?error=2'); // Campos Vacios
                 }
             } else {
-                header('location: login.php');
+                header('location: login.php?error=3'); // Debes iniciar sesion primero
             }
 
             break;
         case 'register':
-            echo 'register';
+            #echo 'register';
+            $template = new CandyUCAB();
+            $template->assign(array(
+               'page_name' => 'Registro'
+            ));
+            $template->display("Public/register.tpl");
             break;
         case 'lost-password':
             echo 'lost-password';
             break;
         default:
             #echo 'Default';
+        if (isset($error)) {
             $template = new CandyUCAB();
             $template->assign(array(
                'page_name' => 'Login',
-                'error' => $error
+               'error' => $error
             ));
             $template->display("Public/login.tpl");
+        } 
+        else{
+            $template = new CandyUCAB();
+            $template->assign(array(
+               'page_name' => 'Login'
+            ));
+            $template->display("Public/login.tpl");
+        }
             break;
+        
     }
 
 ?>
