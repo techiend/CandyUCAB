@@ -23,7 +23,7 @@ class Acceso {
 
             header('location: index.php');
         } else {
-            header('location: login.php?error=noExiste');
+            header('location: login.php?error=1'); // Usuario o Contraseña incorrectos
         }
     }
 
