@@ -4,7 +4,7 @@ class Conexion extends mysqli {
 
         public function __construct()
         {
-            parent::__construct('localhost', 'root', '', 'prinick', 3306, '');
+            parent::__construct('localhost', 'root', '', 'candy_ucab', 3306, '');
 
             $this->connect_errno ? die('Error con la conexion') : $x = 'Conectado';
             #echo $x;
