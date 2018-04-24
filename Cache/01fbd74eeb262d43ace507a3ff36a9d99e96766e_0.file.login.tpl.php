@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2018-04-24 02:31:44
+/* Smarty version 3.1.30, created on 2018-04-24 04:36:09
   from "C:\xampp\htdocs\CandyUCAB\Templates\Public\login.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5ade7af01494d5_12271143',
+  'unifunc' => 'content_5ade981956bd17_25158510',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '01fbd74eeb262d43ace507a3ff36a9d99e96766e' => 
     array (
       0 => 'C:\\xampp\\htdocs\\CandyUCAB\\Templates\\Public\\login.tpl',
-      1 => 1524529901,
+      1 => 1524530352,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:../Overall/Footer.tpl' => 1,
   ),
 ),false)) {
-function content_5ade7af01494d5_12271143 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ade981956bd17_25158510 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:../Overall/Header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -38,6 +38,7 @@ $_smarty_tpl->_subTemplateRender("file:../Overall/Header.tpl", $_smarty_tpl->cac
             <div class="alert alert-danger loginError" role="alert"><?php echo $_smarty_tpl->tpl_vars['error']->value;?>
 </div>
             <?php }?>
+            
             <input type="hidden" name="login" value="1"/>
             <input type="submit" class="btn btn-success" value="Iniciar Sesion"/>
         </form>

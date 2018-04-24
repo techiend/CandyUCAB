@@ -1,3 +1,27 @@
+<?php
+/* Smarty version 3.1.30, created on 2018-04-24 04:36:11
+  from "C:\xampp\htdocs\CandyUCAB\Templates\Overall\Navbar_admin.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_5ade981b2e79b7_71642216',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '738d057b9220f93aba70902b719392f887bbc668' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\CandyUCAB\\Templates\\Overall\\Navbar_admin.tpl',
+      1 => 1524536517,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5ade981b2e79b7_71642216 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
     <div class="navbar-header">
@@ -13,11 +37,12 @@
 
     <ul class="nav navbar-top-links navbar-right">
 
-        {if $login}
+        <?php if ($_smarty_tpl->tpl_vars['login']->value) {?>
         <!-- /.dropdown -->
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                <i class="fa fa-user fa-fw"></i> {$name} <i class="fa fa-caret-down"></i>
+                <i class="fa fa-user fa-fw"></i> <?php echo $_smarty_tpl->tpl_vars['name']->value;?>
+ <i class="fa fa-caret-down"></i>
             </a>
             <ul class="dropdown-menu dropdown-user">
                 <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
@@ -31,7 +56,7 @@
             <!-- /.dropdown-user -->
         </li>
         <!-- /.dropdown -->
-        {/if}
+        <?php }?>
     </ul>
     <!-- /.navbar-top-links -->
 
@@ -130,4 +155,5 @@
         <!-- /.sidebar-collapse -->
     </div>
     <!-- /.navbar-static-side -->
-</nav>
+</nav><?php }
+}

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2018-04-20 05:45:17
+/* Smarty version 3.1.30, created on 2018-04-24 04:35:22
   from "C:\xampp\htdocs\CandyUCAB\Templates\Overall\Navbar_classic.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5ad9624d6dee69_81362597',
+  'unifunc' => 'content_5ade97eac62b15_35589276',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ad9624d6dee69_81362597 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5ade97eac62b15_35589276 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <nav class="navbar navbar-default">
     <div class="container-fluid">

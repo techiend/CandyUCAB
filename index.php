@@ -21,7 +21,8 @@
             'page_name' => 'Index',
             'login' => true,
             'name' => $_SESSION['name'],
-            'user' => $_SESSION['user']
+            'user' => $_SESSION['user'],
+            'rol' => $_SESSION['rol']
         ));
         $template->display("Public/index.tpl");
     }else {

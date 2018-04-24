@@ -20,6 +20,7 @@ class Acceso {
             session_start();
             $_SESSION['user'] = $this->user;
             $_SESSION['name'] = $resultQuery['name_usuario'];
+            $_SESSION['rol'] = $resultQuery['rol'];
 
             header('location: index.php');
         } else {
