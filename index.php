@@ -22,14 +22,7 @@
             'login' => true,
             'name' => $_SESSION['name'],
             'user' => $_SESSION['user'],
-            'rol' => $_SESSION['rol'],
-            'menu'=>array(
-                '0'=>array(
-                    'nombre'=>'Dashboard',
-                    'href'=>'',
-                    'icon'=>''
-                )
-            )
+            'rol' => $_SESSION['rol']
         ));
         $template->display("Public/index.tpl");
     }else {

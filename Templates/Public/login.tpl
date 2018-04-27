@@ -14,7 +14,6 @@
             <input type="hidden" name="login" value="1"/>
             <input type="submit" class="btn btn-success" value="Iniciar Sesion"/>
         </form>
-        <label class="text-center">¿No tienes cuenta? <a href="login.php?modo=register">Registrate</a></label>
     </div>
 
 {include file="../Overall/Footer.tpl"}
