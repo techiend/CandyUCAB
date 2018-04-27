@@ -1,4 +1,31 @@
-{include file="../Overall/Header.tpl"}
+<?php
+/* Smarty version 3.1.30, created on 2018-04-27 20:41:53
+  from "C:\wamp\www\CandyUCAB\Templates\Public\register.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_5ae38b1152a9e9_98857615',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '2b95ccd843adc4ffbcdd98e404e4397c2a01119c' => 
+    array (
+      0 => 'C:\\wamp\\www\\CandyUCAB\\Templates\\Public\\register.tpl',
+      1 => 1524861712,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:../Overall/Header.tpl' => 1,
+    'file:../Overall/Footer.tpl' => 1,
+  ),
+),false)) {
+function content_5ae38b1152a9e9_98857615 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:../Overall/Header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
 
     <div class="jumbotron registerBox">
 
@@ -54,9 +81,10 @@
                         </div>
                     </div>
                 </div>
-                {if isset($error)}
-                    <div class="alert alert-danger loginError" role="alert">{$error}</div>
-                {/if}
+                <?php if (isset($_smarty_tpl->tpl_vars['error']->value)) {?>
+                    <div class="alert alert-danger loginError" role="alert"><?php echo $_smarty_tpl->tpl_vars['error']->value;?>
+</div>
+                <?php }?>
                 <input type="hidden" name="login" value="1"/>
                 <input type="submit" class="btn btn-success" value="Registrarse"/>
             </form>
@@ -104,14 +132,19 @@
                         </div>
                     </div>
                 </div>
-                {if isset($error)}
-                    <div class="alert alert-danger loginError" role="alert">{$error}</div>
-                {/if}
+                <?php if (isset($_smarty_tpl->tpl_vars['error']->value)) {?>
+                    <div class="alert alert-danger loginError" role="alert"><?php echo $_smarty_tpl->tpl_vars['error']->value;?>
+</div>
+                <?php }?>
                 <input type="hidden" name="login" value="1"/>
                 <input type="submit" class="btn btn-success" value="Registrarse"/>
             </form>
         </div>
     </div>
 
-<script src="assets/js/register.js"></script>
-{include file="../Overall/Footer.tpl"}
+<?php echo '<script'; ?>
+ src="assets/js/register.js"><?php echo '</script'; ?>
+>
+<?php $_smarty_tpl->_subTemplateRender("file:../Overall/Footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+}
+}
