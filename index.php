@@ -21,7 +21,15 @@
             'page_name' => 'Index',
             'login' => true,
             'name' => $_SESSION['name'],
-            'user' => $_SESSION['user']
+            'user' => $_SESSION['user'],
+            'rol' => $_SESSION['rol'],
+            'menu'=>array(
+                '0'=>array(
+                    'nombre'=>'Dashboard',
+                    'href'=>'',
+                    'icon'=>''
+                )
+            )
         ));
         $template->display("Public/index.tpl");
     }else {
