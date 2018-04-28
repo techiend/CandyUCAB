@@ -1528,4 +1528,4 @@ class Smarty extends Smarty_Internal_TemplateBase
     }
 }
 
-class CandyUCAB extends Smarty{}
+class CandyUCAB extends SmartyBC{}

@@ -1,7 +1,7 @@
 <?php
 
 include ("libs/Smarty.class.php");
-include("Main.php");
+include("Main/Main.php");
 require("class.Conexion.php");
 
 ?>
