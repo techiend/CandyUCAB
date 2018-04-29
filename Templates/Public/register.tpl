@@ -1,9 +1,11 @@
 {include file="../Overall/Header.tpl"}
 
+<body>
 {php}
-    if (){
 
-    }
+    $db = new Conexion();
+    $query = $db->query("SELECT id_lugar, nombre_lugar FROM lugar WHERE tipo_lugar = 'Estado' ORDER BY nombre_lugar ASC;");
+
 {/php}
 
     <div class="jumbotron registerBox">
@@ -60,14 +62,21 @@
                     <div class="row">
                         <div class="col-md-6">
                             <label>Estado: </label><br>
-                            <select class="form-control" id="cb_estado" name="cb_estado" onchange="">
-                                <option value="0">Seleccionar Estado</option>
+                            <select class="form-control" id="cb_estado" name="cb_estado">
+                                <option value="">Selecciona un estado</option>
+                                {php}
+                                    while($row = $query->fetch_assoc()){
+                                {/php}
+                                    <option value="{php}echo $row['id_lugar'];{/php}">{php}echo utf8_encode($row['nombre_lugar']);{/php}</option>
+                                {php}
+                                    }
+                                {/php}
                             </select>
                         </div>
                         <div class="col-md-6">
                             <label>Municipio: </label><br>
                             <select class="form-control" id="cb_municipio" name="cb_municipio">
-
+                                <option value="">Selecciona un municipio</option>
                             </select>
                         </div>
                     </div>
@@ -78,7 +87,7 @@
                         <div class="col-md-6">
                             <label>Parroquia: </label><br>
                             <select class="form-control" id="cb_parroquia" name="cb_parroquia">
-                                <option value="0">Seleccionar Parroquia</option>
+                                <option value="0">Selecciona una parroquia</option>
                             </select>
                         </div>
                     </div>
@@ -197,36 +206,50 @@
 
 <script src="assets/js/register.js"></script>
 
-{php}
-    function llenarEstados(){
-        $db = new Conexion();
-        $query = $db->query("SELECT id_lugar, nombre_lugar FROM lugar WHERE tipo_lugar = 'Estado' ORDER BY nombre_lugar ASC;");
+<script>
+    {literal}
+    $('#cb_estado').change(function () {
+        var estado = $(this).val();
 
-        $i=0;
-        $combo = '<select class="form-control" id="cb_estado" name="cb_estado" onchange="cargarMunicipios(value);">';
-        while($row = $query->fetch_assoc()){
-            if($i==0)
-                $combo .= '<option value="-1">Seleccionar Estado</option>'."\n";
-            $combo .= '<option value="'.$row[0].'">'.$row[1].'</option>'."\n";
-        }
-        $combo .= "</select>\n";
-        return $combo;
-    }
 
-    function llenarMunicipios(){
-    $db = new Conexion();
-    $query = $db->query("SELECT id_lugar, nombre_lugar FROM lugar WHERE tipo_lugar = 'Estado' ORDER BY nombre_lugar ASC;");
+        $.post("funcion.getMunicipio.php",{id:estado},function (json) {
+            console.log(json);
+            if (json.ok === true){
 
-    $i=0;
-    $comboM = '<select class="form-control" id="cb_municipio" name="cb_municipio">';
-    while($row = $query->fetch_assoc()){
-    if($i==0)
-    $comboM .= '<option value="-1">Seleccionar Estado</option>'."\n";
-    $comboM .= '<option value="'.$row[0].'">'.$row[1].'</option>'."\n";
-    }
-    $comboM .= "</select>\n";
-    return $comboM;
-    }
-{/php}
+                $('#cb_municipio').html(json.tpl);
+
+            }else{
+                document.getElementById("cb_municipio").length=0;
+                document.getElementById("cb_parroquia").length=0;
+                $('#cb_municipio').html(json.tpl);
+                $('#cb_parroquia').html(json.tplP);
+            }
+
+        },'json');
+
+
+    });
+
+    $('#cb_municipio').change(function () {
+        var municipio = $(this).val();
+
+
+        $.post("funcion.getParroquia.php",{id:municipio},function (json) {
+            console.log(json);
+            if (json.ok === true){
+
+                $('#cb_parroquia').html(json.tpl);
+
+            }else{
+                document.getElementById("cb_parroquia").length=0;
+                $('#cb_parroquia').html(json.tpl);
+            }
+
+        },'json');
+
+
+    });
+    {/literal}
+</script>
 
 {include file="../Overall/Footer.tpl"}

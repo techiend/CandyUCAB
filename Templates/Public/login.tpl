@@ -1,5 +1,7 @@
 {include file="../Overall/Header.tpl"}
 
+<body>
+
     <div class="jumbotron loginBox">
         <form method="POST" name="flogin" id="flogin" action="login.php?modo=login">
             <label>Correo Electronico: </label>
@@ -16,5 +18,7 @@
         </form>
         <label class="text-center">¿No tienes cuenta? <a href="register.php">Registrate</a></label>
     </div>
+
+</body>
 
 {include file="../Overall/Footer.tpl"}
