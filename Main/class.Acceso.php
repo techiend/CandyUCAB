@@ -17,7 +17,7 @@ class Acceso {
         $db = new Conexion();
         $query = $db->query("SELECT * FROM usuarios WHERE user_usuario = '$this->user' AND psw_usuario = '$this->pass';");
 
-        $resultQuery = $db->recorrer($query);
+        $resultQuery = $db->result($query);
 
         if ($resultQuery['name_usuario'] != ''){
             session_start();

@@ -24,6 +24,10 @@ class Conexion extends mysqli {
             return $array;
         }
 
+        public function result($x){
+            return mysqli_fetch_array($x);
+        }
+
 }
 
 $db = new Conexion();
