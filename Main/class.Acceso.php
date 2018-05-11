@@ -15,17 +15,18 @@ class Acceso {
 
     public function Login(){
         $db = new Conexion();
-        $query = $db->query("SELECT * FROM usuarios WHERE user_usuario = '$this->user' AND psw_usuario = '$this->pass';");
+        $query1 = $db->query("SELECT * FROM usuario WHERE user_Usuario = '$this->user' AND pass_Usuario = '$this->pass';");
 
-        $resultQuery = $db->result($query);
+        $resultQuery1 = $db->result($query1);
 
-        if ($resultQuery['name_usuario'] != ''){
+        if ($resultQuery1['cod_Usuario'] != ''){
+            $query2 = $db->query("SELECT * FROM Cliente_Juridico as CJ, Cliente_Natural as CN, Personal as P WHERE CJ.fk_Usuario = '".$resultQuery1['cod_Usuario']."' OR CN.fk_Usuario = '".$resultQuery1['cod_Usuario']."' OR P.fk_Usuario = '".$resultQuery1['cod_Usuario']."';");
             session_start();
             $_SESSION['user'] = $this->user;
-            $_SESSION['name'] = $resultQuery['name_usuario'];
-            $_SESSION['rol'] = $resultQuery['rol'];
+            $_SESSION['name'] = $resultQuery1['cod_Usuario'];
+            $_SESSION['rol'] = $resultQuery1['fk_Rol'];
 
-            if ($resultQuery['rol'] == 1)
+            if ($resultQuery1['rol'] == 1)
                 header('location: admin.php');
             else
                 header('location: index.php');

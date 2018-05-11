@@ -15,14 +15,14 @@ if (isset($municipio)&&$municipio!=""){
     $db = new Conexion();
 
 
-    $queryParr = $db->query("SELECT id_lugar, nombre_lugar FROM lugar WHERE tipo_lugar = 'Parroquia' AND $municipio = fk_lugar ORDER BY nombre_lugar ASC;");
+    $queryParr = $db->query("SELECT cod_Lugar, nombre_Lugar FROM lugar WHERE tipo_Lugar = 'Parroquia' AND $municipio = fk_Lugar ORDER BY nombre_Lugar ASC;");
     $charset = $db->set_charset("UTF8");
 
     $parroquias = $db->recorrer($queryParr);
 
     $html .= "<option value=''>Selecciona una parroquia</option>";
     foreach ($parroquias as $key=>$p){
-        $html .= "<option value='".$p['id_lugar']."'>".utf8_encode($p['nombre_lugar'])."</option>";
+        $html .= "<option value='".$p['cod_Lugar']."'>".utf8_encode($p['nombre_Lugar'])."</option>";
     }
 
 //echo $html;
