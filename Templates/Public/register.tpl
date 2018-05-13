@@ -4,7 +4,7 @@
 {php}
 
     $db = new Conexion();
-    $query = $db->query("SELECT id_lugar, nombre_lugar FROM lugar WHERE tipo_lugar = 'Estado' ORDER BY nombre_lugar ASC;");
+    $query = $db->query("SELECT cod_Lugar, nombre_Lugar FROM lugar WHERE tipo_Lugar = 'Estado' ORDER BY nombre_Lugar ASC;");
 
 {/php}
 
@@ -67,7 +67,7 @@
                                 {php}
                                     while($row = $query->fetch_assoc()){
                                 {/php}
-                                    <option value="{php}echo $row['id_lugar'];{/php}">{php}echo utf8_encode($row['nombre_lugar']);{/php}</option>
+                                    <option value="{php}echo $row['cod_Lugar'];{/php}">{php}echo utf8_encode($row['nombre_Lugar']);{/php}</option>
                                 {php}
                                     }
                                 {/php}

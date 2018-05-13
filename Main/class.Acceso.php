@@ -20,13 +20,27 @@ class Acceso {
         $resultQuery1 = $db->result($query1);
 
         if ($resultQuery1['cod_Usuario'] != ''){
-            $query2 = $db->query("SELECT * FROM Cliente_Juridico as CJ, Cliente_Natural as CN, Personal as P WHERE CJ.fk_Usuario = '".$resultQuery1['cod_Usuario']."' OR CN.fk_Usuario = '".$resultQuery1['cod_Usuario']."' OR P.fk_Usuario = '".$resultQuery1['cod_Usuario']."';");
+
+//            switch ($resultQuery1['tipo_Usuario']){
+//                case 'CJ':
+//                    break;
+//                case 'CN':
+//                    break;
+//                case 'PP':
+//                    $query2 = $db->query("SELECT * FROM Personal WHERE '".$resultQuery1['cod_Usuario']."' = fk_Usuario");
+//                    $resultQuery2 = $db->result($query2);
+//                    session_start();
+//                    $_SESSION['user'] = $this->user;
+//                    $_SESSION['name'] = $resultQuery2['nombre_Personal'];
+//                    break;
+//            }
+
             session_start();
             $_SESSION['user'] = $this->user;
-            $_SESSION['name'] = $resultQuery1['cod_Usuario'];
+            $_SESSION['name'] = $this->user;
             $_SESSION['rol'] = $resultQuery1['fk_Rol'];
 
-            if ($resultQuery1['rol'] == 1)
+            if ($resultQuery1['fk_Rol'] == 1)
                 header('location: admin.php');
             else
                 header('location: index.php');
