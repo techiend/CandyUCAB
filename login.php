@@ -29,7 +29,7 @@
                 if(!empty($_POST['user']) and !empty($_POST['pass'])){
 
                     include("Main/class.Acceso.php");
-                    $acceso = new Acceso($_POST['user'],$_POST['pass']);
+                    $acceso = new Acceso($_POST['user'],$_POST['pass'],null);
                     $acceso->Login();
 
                 }else {
@@ -39,14 +39,6 @@
                 header('location: login.php?error=3'); // Debes iniciar sesion primero
             }
 
-            break;
-        case 'register':
-            #echo 'register';
-            $template = new CandyUCAB();
-            $template->assign(array(
-               'page_name' => 'Registro'
-            ));
-            $template->display("Public/register.tpl");
             break;
         case 'lost-password':
             echo 'lost-password';
