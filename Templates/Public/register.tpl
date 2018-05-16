@@ -41,7 +41,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-12" style="margin-top: 10px; margin-bottom: 15px;">
+                <div class="col-md-12" style="margin-top: 10px">
                     <div class="row">
                         <div class="col-md-6">
                             <label>Primer Apellido: </label>
@@ -50,6 +50,28 @@
                         <div class="col-md-6">
                             <label>Segundo Apellido: </label>
                             <input type="text" name="lname2" placeholder="Segundo Apellido" class="form-control"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12" style="margin-top: 10px">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Correo Electronico: </label>
+                            <input type="text" name="email" placeholder="Correo Electronico" class="form-control"/>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Confirmar Correo: </label>
+                            <input type="text" name="conf_email" placeholder="Correo Electronico" class="form-control"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12" style="margin-top: 10px; margin-bottom: 15px;">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Número Telefónico: </label>
+                            <input type="tel" name="celphone" placeholder="Número Telefónico" class="form-control"/>
                         </div>
                     </div>
                 </div>
@@ -109,12 +131,12 @@
                 <div class="col-md-12" style="margin-top: 10px;">
                     <div class="row">
                         <div class="col-md-6">
-                            <label>Correo Electronico: </label>
-                            <input type="text" name="email" placeholder="Correo Electronico" class="form-control"/>
+                            <label>Contraseña: </label>
+                            <input type="password" name="pass" placeholder="Contraseña" class="form-control"/>
                         </div>
                         <div class="col-md-6">
-                            <label>Confirmar Correo: </label>
-                            <input type="text" name="conf_email" placeholder="Correo Electronico" class="form-control"/>
+                            <label>Confirmar Contraseña: </label>
+                            <input type="password" name="conf_pass" placeholder="Contraseña" class="form-control"/>
                         </div>
                     </div>
                 </div>
@@ -122,16 +144,13 @@
                 <div class="col-md-12" style="margin-top: 10px;">
                     <div class="row">
                         <div class="col-md-6">
-                            <label>Contraseña: </label>
-                            <input type="text" name="pass" placeholder="Correo Electronico" class="form-control"/>
+                            <input type="submit" class="btn btn-success" value="Registrarse"/>
                         </div>
                         <div class="col-md-6">
-                            <label>Confirmar Contraseña: </label>
-                            <input type="text" name="conf_pass" placeholder="Correo Electronico" class="form-control"/>
+                            <input class="btn btn-success" value="Registrarse"/>
                         </div>
                     </div>
                 </div>
-                <input type="submit" class="btn btn-success" value="Registrarse"/>
             </form>
             {if isset($error)}
                 <div class="alert alert-danger loginError" role="alert">{$error}</div>

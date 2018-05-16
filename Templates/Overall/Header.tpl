@@ -16,7 +16,7 @@
     <link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- jQuery -->
-    <script src="assets/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/jquery/jquery.min.js"></script>
 
 
 </head>
