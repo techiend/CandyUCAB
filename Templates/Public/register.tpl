@@ -140,25 +140,18 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-md-12" style="margin-top: 10px;">
                     <div class="row">
                         <div class="col-md-6">
                             <input type="submit" class="btn btn-success" value="Registrarse"/>
                         </div>
-                        <div class="col-md-6">
-                            <input class="btn btn-success" value="Registrarse"/>
-                        </div>
                     </div>
                 </div>
             </form>
-            {if isset($error)}
-                <div class="alert alert-danger loginError" role="alert">{$error}</div>
-            {/if}
         </div>
 
         <div id="registerPJ" style="display: none;" >
-            <form method="POST" name="fregisterPJ" id="fregisterPJ" action="login.php?modo=registerPJ">
+            <form method="POST" name="fregisterPJ" id="fregisterPJ" action="register.php?modo=register">
                 <input type="hidden" name="register" value="1"/>
                 <div class="col-md-12">
                     <div class="row">
@@ -214,10 +207,7 @@
                         </div>
                     </div>
                 </div>
-                {if isset($error)}
-                    <div class="alert alert-danger loginError" role="alert">{$error}</div>
-                {/if}
-                <input type="hidden" name="login" value="1"/>
+                <input type="hidden" name="register" value="1"/>
                 <input type="submit" class="btn btn-success" value="Registrarse"/>
             </form>
         </div>
