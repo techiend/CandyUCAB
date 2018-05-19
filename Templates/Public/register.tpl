@@ -21,13 +21,13 @@
         </div>
 
         <div id="registerPN" value='registerPN'>
-            <form method="POST" name="fregisterPN" id="fregisterPN" action="register.php?modo=register">
-                <input type="hidden" name="register" value="1"/>
+            <form method="POST" name="fregisterPN" id="fregisterPN" action="register.php?modo=registerPN">
+                <input type="hidden" name="registerPN" value="1"/>
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-md-6">
                             <label>Cédula: </label>
-                            <input type="text" name="ci" placeholder="Cédula" class="form-control"/>
+                            <input type="text" name="ci" placeholder="Cédula" value="{php}if(isset($_GET['ci'])) echo $_GET['ci'];{/php}" class="form-control"/>
                         </div>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <label>Nombre: </label>
-                            <input type="text" name="name" placeholder="Nombre" class="form-control"/>
+                            <input type="text" name="name" placeholder="Nombre" value="{php}if(isset($_GET['name'])) echo $_GET['name'];{/php}" class="form-control"/>
                         </div>
                     </div>
                 </div>
@@ -45,11 +45,11 @@
                     <div class="row">
                         <div class="col-md-6">
                             <label>Primer Apellido: </label>
-                            <input type="text" name="lname1" placeholder="Primer Apellido" class="form-control"/>
+                            <input type="text" name="lname1" placeholder="Primer Apellido" value="{php}if(isset($_GET['lname1'])) echo $_GET['lname1'];{/php}" class="form-control"/>
                         </div>
                         <div class="col-md-6">
                             <label>Segundo Apellido: </label>
-                            <input type="text" name="lname2" placeholder="Segundo Apellido" class="form-control"/>
+                            <input type="text" name="lname2" placeholder="Segundo Apellido" value="{php}if(isset($_GET['lname2'])) echo $_GET['lname2'];{/php}" class="form-control"/>
                         </div>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <label>Número Telefónico: </label>
-                            <input type="tel" name="celphone" placeholder="Número Telefónico" class="form-control"/>
+                            <input type="tel" name="celphone" placeholder="Número Telefónico" value="{php}if(isset($_GET['celphone'])) echo $_GET['celphone'];{/php}" class="form-control"/>
                         </div>
                     </div>
                 </div>
@@ -123,7 +123,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <label>Usuario: </label>
-                            <input type="text" name="user" placeholder="Usuario" class="form-control"/>
+                            <input type="text" name="user" placeholder="Usuario" value="{php}if(isset($_GET['user'])) echo $_GET['user'];{/php}" class="form-control"/>
                         </div>
                     </div>
                 </div>
@@ -141,25 +141,24 @@
                     </div>
                 </div>
 
-                <div class="col-md-12" style="margin-top: 10px;">
+                <div class="col-md-12">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <input type="submit" class="btn btn-success" value="Registrarse"/>
                         </div>
-                        <div class="col-md-6">
-                            <input class="btn btn-success" value="Registrarse"/>
+                        <div class="col-md-8">
+                            {if isset($error)}
+                                <div class="alert alert-danger loginError" role="alert">{$error}</div>
+                            {/if}
                         </div>
                     </div>
                 </div>
             </form>
-            {if isset($error)}
-                <div class="alert alert-danger loginError" role="alert">{$error}</div>
-            {/if}
         </div>
 
         <div id="registerPJ" style="display: none;" >
             <form method="POST" name="fregisterPJ" id="fregisterPJ" action="login.php?modo=registerPJ">
-                <input type="hidden" name="register" value="1"/>
+                <input type="hidden" name="registerPJ" value="1"/>
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-md-6">
