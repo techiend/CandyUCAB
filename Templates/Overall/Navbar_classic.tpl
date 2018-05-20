@@ -8,12 +8,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="login.php">Brand</a>
+            <a class="navbar-brand" href="login.php">Login</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
+            <!--<ul class="nav navbar-nav">
                 <li><a href="#">Link <span class="sr-only">(current)</span></a></li>
                 <li><a href="#">Link</a></li>
                 <li class="dropdown">
@@ -28,7 +28,7 @@
                         <li><a href="#">One more separated link</a></li>
                     </ul>
                 </li>
-            </ul>
+            </ul>-->
 
             {if $login}
                 <ul class="nav navbar-nav navbar-right">

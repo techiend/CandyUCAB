@@ -4,36 +4,76 @@ class Acceso {
 
     protected $user;
     protected $pass;
+    protected $name;
 
-    public function __construct($usuario, $password){
+
+    public function __construct($usuario, $password, $name){
         $this->user = $usuario;
         $this->pass = $password;
+        $this->name = $name;
     }
 
     public function Login(){
         $db = new Conexion();
-        $query = $db->query("SELECT * FROM usuarios WHERE user_usuario = '$this->user' AND psw_usuario = '$this->pass';");
+        $query1 = $db->query("SELECT * FROM usuario WHERE user_Usuario = '$this->user' AND pass_Usuario = '$this->pass';");
 
-        $resultQuery = $db->recorrer($query);
+        $resultQuery1 = $db->result($query1);
 
-        if ($resultQuery['name_usuario']!= ''){
+        if ($resultQuery1['cod_Usuario'] != ''){
+
+//            switch ($resultQuery1['tipo_Usuario']){
+//                case 'CJ':
+//                    break;
+//                case 'CN':
+//                    break;
+//                case 'PP':
+//                    $query2 = $db->query("SELECT * FROM Personal WHERE '".$resultQuery1['cod_Usuario']."' = fk_Usuario");
+//                    $resultQuery2 = $db->result($query2);
+//                    session_start();
+//                    $_SESSION['user'] = $this->user;
+//                    $_SESSION['name'] = $resultQuery2['nombre_Personal'];
+//                    break;
+//            }
+
             session_start();
             $_SESSION['user'] = $this->user;
-            $_SESSION['name'] = $resultQuery['name_usuario'];
+            $_SESSION['name'] = $this->user;
+            $_SESSION['rol'] = $resultQuery1['fk_Rol'];
 
-            header('location: index.php');
+            if ($resultQuery1['fk_Rol'] == 1)
+                header('location: admin.php');
+            else
+                header('location: index.php');
+            
         } else {
             header('location: login.php?error=1'); // Usuario o Contraseña incorrectos
         }
     }
 
     public function Register(){
+        $db = new Conexion();
+        $query = $db->query("SELECT user_usuario FROM usuarios WHERE user_usuario = '$this->user';");
 
+        $resultQuery = $db->recorrer($query);
+
+        if($resultQuery['user_usuario'] == ''){
+            $db->query("INSERT INTO usuarios(user_usuario, psw_usuario, name_usuario, rol) VALUES ('$this->user', '$this->pass', '$this->name', 2);");
+
+            session_start();
+            $_SESSION['user'] = $this->user;
+            $_SESSION['name'] = $this->name;;
+            $_SESSION['rol'] = 2;
+
+            header('location: index.php');
+        } else {
+            header('location: register.php?error=1'); // Usuario ya existe
+        }
     }
 
     public function LostPass(){
 
     }
+
 }
 
 ?>
