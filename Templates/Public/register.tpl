@@ -235,7 +235,7 @@
 
                 <div class="col-md-12 registerData" style="margin-bottom: 20px;: ">
                     <div class="row">
-                        <ul class="registerData">
+                        <ul class="registerData" id="personasContactoPJ">
                             <li>
                                 <div class="col-md-6">
                                     <select class="form-control" disabled id="" name="">
@@ -245,7 +245,7 @@
                                 <div class="col-md-6">
                                     <input type="text" name="celphone" placeholder="Teléfono" class="form-control"/>
                                 </div>
-                            </li>
+                                </li>
                             <li>
                                 <div class="col-md-6">
                                     <select class="form-control" disabled id="" name="">
@@ -257,20 +257,20 @@
                                 </div>
                             </li>
                             <li>
-                                <div class="col-md-12 registerData">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <select class="form-control" disabled id="" name="">
-                                                <option value="">Página WEB</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <input type="text" name="pweb" placeholder="Página WEB" class="form-control"/>
-                                        </div>
-                                    </div>
+                                <div class="col-md-6">
+                                    <select class="form-control" disabled id="" name="">
+                                        <option value="">Página WEB</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" name="pweb" placeholder="Página WEB" class="form-control"/>
                                 </div>
                             </li>
                         </ul>
+
+                        <div class="row col-md-1 col-md-push-11">
+                            <button id="addContactPJ" type="button" class="btn btn-primary" style="margin-top: 10px">+</button>
+                        </div>
                     </div>
                 </div>
 
