@@ -75,29 +75,36 @@
                     <div class="row">
                         <ul class="registerData" id="personasContacto">
                             <li>
-                                <div class="col-md-6">
-                                    <select class="form-control" disabled id="" name="">
-                                        <option value="">Teléfono</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" name="celphone" value="{php}if(isset($_GET['celphone'])) echo $_GET['celphone'];{/php}" placeholder="Teléfono" class="form-control"/>
+                                <div class="col-md-12 row">
+                                    <div class="col-md-6">
+                                        <select class="form-control" disabled name="tipoContactoPN[]">
+                                            <option value="Teléfono">Teléfono</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" name="contactoPN[]" value="{php}if(isset($_GET['celphone'])) echo $_GET['celphone'];{/php}" placeholder="Teléfono" class="form-control"/>
+                                    </div>
                                 </div>
                             </li>
                             <li>
-                                <div class="col-md-6">
-                                    <select class="form-control" disabled id="" name="">
-                                        <option value="">Correo Electrónico</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" name="email" placeholder="Correo Electrónico" class="form-control"/>
+                                <div class="col-md-12 row">
+                                    <div class="col-md-6">
+                                        <select class="form-control" disabled name="tipoContactoPN[]">
+                                            <option value="Correo Electrónico">Correo Electrónico</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" name="contactoPN[]" placeholder="Correo Electrónico" class="form-control"/>
+                                    </div>
                                 </div>
                             </li>
                         </ul>
                     </div>
+                    <div class="row col-md-1">
+                        <button onclick="remElementPN('personasContacto');" type="button" class="btn btn-danger" style="margin-top: 10px">-</button>
+                    </div>
                     <div class="row col-md-1 col-md-push-11">
-                        <button id="addContact" type="button" class="btn btn-primary" style="margin-top: 10px">+</button>
+                        <button onclick="addElementPN();" type="button" class="btn btn-primary" style="margin-top: 10px">+</button>
                     </div>
                 </div>
 
@@ -235,41 +242,52 @@
 
                 <div class="col-md-12 registerData" style="margin-bottom: 20px;: ">
                     <div class="row">
-                        <ul class="registerData" id="personasContactoPJ">
-                            <li>
-                                <div class="col-md-6">
-                                    <select class="form-control" disabled id="" name="">
-                                        <option value="">Teléfono</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" name="celphone" placeholder="Teléfono" class="form-control"/>
-                                </div>
+                        <div class="row">
+                            <ul class="registerData" id="personasContactoPJ">
+                                <li>
+                                    <div class="col-md-12 row">
+                                        <div class="col-md-6">
+                                            <select class="form-control" disabled name="tipoContactoPJ[]">
+                                                <option value="Teléfono">Teléfono</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" name="contactoPJ[]" placeholder="Teléfono" class="form-control"/>
+                                        </div>
+                                    </div>
                                 </li>
-                            <li>
-                                <div class="col-md-6">
-                                    <select class="form-control" disabled id="" name="">
-                                        <option value="">Correo Electrónico</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" name="email" placeholder="Correo Electrónico" class="form-control"/>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="col-md-6">
-                                    <select class="form-control" disabled id="" name="">
-                                        <option value="">Página WEB</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" name="pweb" placeholder="Página WEB" class="form-control"/>
-                                </div>
-                            </li>
-                        </ul>
+                                <li>
+                                    <div class="col-md-12 row">
+                                        <div class="col-md-6">
+                                            <select class="form-control" disabled name="tipoContactoPJ[]">
+                                                <option value="Correo Electrónico">Correo Electrónico</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" name="contactoPJ[]" placeholder="Correo Electrónico" class="form-control"/>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="col-md-12 row">
+                                        <div class="col-md-6">
+                                            <select class="form-control" disabled name="tipoContactoPJ[]">
+                                                <option value="Página WEB">Página WEB</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" name="contactoPJ[]" placeholder="Página WEB" class="form-control"/>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
 
+                        <div class="row col-md-1">
+                            <button onclick="remElementPJ('personasContactoPJ');" type="button" class="btn btn-danger" style="margin-top: 10px">-</button>
+                        </div>
                         <div class="row col-md-1 col-md-push-11">
-                            <button id="addContactPJ" type="button" class="btn btn-primary" style="margin-top: 10px">+</button>
+                            <button onclick="addElementPJ();" type="button" class="btn btn-primary" style="margin-top: 10px">+</button>
                         </div>
                     </div>
                 </div>
@@ -437,5 +455,71 @@
 
 <script src="assets/js/register.js"></script>
 <script src="assets/js/selectLugar.js"></script>
+
+<script type="text/javascript" >
+    var contactNumberPN = 2;
+    var contactNumberPJ = 3;
+
+    function addElementPN() {
+        var itemName = 'itemPN'+(contactNumberPN+1);
+
+
+        $("#personasContacto").append("" +
+            "<li id=\""+itemName+"\">" +
+            "<div class=\"col-md-12 row\"'>"+
+            "<div class=\"col-md-6\">\n" +
+            "<select class=\"form-control\" id=\"tipoContactoPN"+(contactNumberPN+1)+"\" name=\"tipoContactoPN[]\">\n" +
+            "<option value=\"Correo Electrónico\">Correo Electrónico</option>\n" +
+            "<option value=\"Teléfono\">Teléfono</option>\n" +
+            "</select>\n" +
+            "</div>\n" +
+            "<div class=\"col-md-6\">\n" +
+            "<input type=\"text\" name=\"contactoPN[]\" placeholder=\"\" class=\"form-control\"/>\n" +
+            "</div>" +
+            "</div>" +
+            "</li>");
+        contactNumberPN = contactNumberPN + 1;
+    }
+
+    function addElementPJ() {
+        var itemName = 'itemPJ'+(contactNumberPJ+1);
+
+        $("#personasContactoPJ").append("" +
+            "<li id=\""+itemName+"\">" +
+            "<div class=\"col-md-12 row\"'>"+
+            "<div class=\"col-md-6\">\n" +
+            "<select class=\"form-control\" id=\"tipoContactoPJ"+(contactNumberPJ+1)+"\" name=\"tipoContactoPJ[]\">\n" +
+            "<option value=\"Correo Electrónico\">Correo Electrónico</option>\n" +
+            "<option value=\"Teléfono\">Teléfono</option>\n" +
+            "<option value=\"Página WEB\">Página WEB</option>\n" +
+            "</select>\n" +
+            "</div>\n" +
+            "<div class=\"col-md-6\">\n" +
+            "<input type=\"text\" name=\"contactoPJ[]\" placeholder=\"\" class=\"form-control\"/>\n" +
+            "</div>" +
+            "</div>" +
+            "</li>");
+        contactNumberPJ = contactNumberPJ + 1;
+
+    }
+    
+    function remElementPN(id) {
+        var list = document.getElementById(id);
+
+        if (list.hasChildNodes() && list.childElementCount > 2) {
+            list.removeChild(list.lastChild);
+        }
+        contactNumberPN = contactNumberPN - 1;
+    }
+
+    function remElementPJ(id) {
+        var list = document.getElementById(id);
+
+        if (list.hasChildNodes() && list.childElementCount > 3) {
+            list.removeChild(list.lastChild);
+        }
+        contactNumberPJ = contactNumberPJ - 1;
+    }
+</script>
 
 {include file="../Overall/Footer.tpl"}
