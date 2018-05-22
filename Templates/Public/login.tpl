@@ -11,11 +11,12 @@
             {if isset($error)}
             <div class="alert alert-danger loginError" role="alert">{$error}</div>
             {/if}
-            
+
             <input type="hidden" name="login" value="1"/>
             <input type="submit" class="btn btn-success" value="Iniciar Sesion"/>
         </form>
         <label class="text-center">¿No tienes cuenta? <a href="register.php">Registrate</a></label>
+        <label class="text-center"><a href="registerPersonal.php">Registrarse como personal</a></label>
     </div>
 </body>
 
