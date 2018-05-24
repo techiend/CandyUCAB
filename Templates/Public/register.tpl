@@ -35,6 +35,10 @@
                             <label>Cédula: </label>
                             <input type="text" name="ci" placeholder="Cédula" value="{php}if(isset($_GET['ci'])) echo $_GET['ci'];{/php}" class="form-control"/>
                         </div>
+                        <div class="col-md-6">
+                            <label>RIF: </label>
+                            <input type="text" name="rif" placeholder="RIF" value="{php}if(isset($_GET['rif'])) echo $_GET['rif'];{/php}"  class="form-control"/>
+                        </div>
                     </div>
                 </div>
 
@@ -455,71 +459,7 @@
 
 <script src="assets/js/register.js"></script>
 <script src="assets/js/selectLugar.js"></script>
+<script src="assets/js/addHTMLElement.js"></script>
 
-<script type="text/javascript" >
-    var contactNumberPN = 2;
-    var contactNumberPJ = 3;
-
-    function addElementPN() {
-        var itemName = 'itemPN'+(contactNumberPN+1);
-
-
-        $("#personasContacto").append("" +
-            "<li id=\""+itemName+"\">" +
-            "<div class=\"col-md-12 row\"'>"+
-            "<div class=\"col-md-6\">\n" +
-            "<select class=\"form-control\" id=\"tipoContactoPN"+(contactNumberPN+1)+"\" name=\"tipoContactoPN[]\">\n" +
-            "<option value=\"Correo Electrónico\">Correo Electrónico</option>\n" +
-            "<option value=\"Teléfono\">Teléfono</option>\n" +
-            "</select>\n" +
-            "</div>\n" +
-            "<div class=\"col-md-6\">\n" +
-            "<input type=\"text\" name=\"contactoPN[]\" placeholder=\"\" class=\"form-control\"/>\n" +
-            "</div>" +
-            "</div>" +
-            "</li>");
-        contactNumberPN = contactNumberPN + 1;
-    }
-
-    function addElementPJ() {
-        var itemName = 'itemPJ'+(contactNumberPJ+1);
-
-        $("#personasContactoPJ").append("" +
-            "<li id=\""+itemName+"\">" +
-            "<div class=\"col-md-12 row\"'>"+
-            "<div class=\"col-md-6\">\n" +
-            "<select class=\"form-control\" id=\"tipoContactoPJ"+(contactNumberPJ+1)+"\" name=\"tipoContactoPJ[]\">\n" +
-            "<option value=\"Correo Electrónico\">Correo Electrónico</option>\n" +
-            "<option value=\"Teléfono\">Teléfono</option>\n" +
-            "<option value=\"Página WEB\">Página WEB</option>\n" +
-            "</select>\n" +
-            "</div>\n" +
-            "<div class=\"col-md-6\">\n" +
-            "<input type=\"text\" name=\"contactoPJ[]\" placeholder=\"\" class=\"form-control\"/>\n" +
-            "</div>" +
-            "</div>" +
-            "</li>");
-        contactNumberPJ = contactNumberPJ + 1;
-
-    }
-    
-    function remElementPN(id) {
-        var list = document.getElementById(id);
-
-        if (list.hasChildNodes() && list.childElementCount > 2) {
-            list.removeChild(list.lastChild);
-        }
-        contactNumberPN = contactNumberPN - 1;
-    }
-
-    function remElementPJ(id) {
-        var list = document.getElementById(id);
-
-        if (list.hasChildNodes() && list.childElementCount > 3) {
-            list.removeChild(list.lastChild);
-        }
-        contactNumberPJ = contactNumberPJ - 1;
-    }
-</script>
 
 {include file="../Overall/Footer.tpl"}
