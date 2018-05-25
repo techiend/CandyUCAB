@@ -72,7 +72,7 @@
                 </div>
                 <div class="row">
                      <div class="col-md-push-6  col-md-4">
-                         <button class="btn btn-default" type="submit">Agregar dulce</button>
+                         <button class="btn btn-info" type="submit">Agregar dulce</button>
                      </div>
                 </div>
             </form>
