@@ -2,6 +2,12 @@
 
 <link rel="stylesheet" href="assets/css/inventario.css?v={0|rand:100}" media="screen">
 
+{php}
+    $db = new Conexion();
+    $query = $db->query("SELECT cod_caramelo,");
+
+{/php}
+
 <body>
     <div id="wrapper">
         {include file='../Overall/Navbar_admin.tpl'}
@@ -12,11 +18,11 @@
                         <br>
                         <br>
                     <div class="row">
-                        <div class="col-md-10">
+                        <div class="col-md-6">
                             <label>Caramelos disponibles:</label>
                         </div>
                     </div>
-                        <div class="col-md-12 table-responsive">
+                        <div class="col-md-12">
                             <table class="table table-bordered margenIz ">
                                 <thead>
                                 <tr>
