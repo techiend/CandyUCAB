@@ -116,6 +116,45 @@
 
                 <div class="col-md-12 registerData">
                     <div class="row">
+                        <label>Métodos de Pago:</label>
+                    </div>
+                </div>
+
+                <div class="col-md-12 registerData" style="margin-bottom: 20px;: ">
+                    <div class="row">
+                        <div class="row">
+                            <ul class="registerData" id="pagosPN">
+                                <li id="metodoPagoPN1">
+                                    <div class="col-md-12 row" >
+                                        <div class="col-md-7">
+                                            <select class="form-control" name="tipoPagoPN[]" id="tipoPago" onchange="showDataTipoPagoPN(this, 'metodoPagoPN1')">
+                                                <option value="">Seleccione método de pago</option>
+                                                <option value="tdc">Tarjeta de Crédito</option>
+                                                <option value="tdd">Tarjeta de Débito</option>
+                                                <option value="efe">Efectivo</option>
+                                                <option value="che">Cheque</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="row col-md-1">
+                            <button onclick="remMetodoPagoPN('pagosPN');" type="button" class="btn btn-danger" style="margin-top: 10px">-</button>
+                        </div>
+                        <div class="row col-md-1 col-md-push-11">
+                            <button onclick="addMetodoPagoPN();" type="button" class="btn btn-primary" style="margin-top: 10px">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <hr>
+                </div>
+
+                <div class="col-md-12 registerData">
+                    <div class="row">
                         <div class="col-md-6">
                             <label>Estado: </label><br>
                             <select class="form-control" id="cb_estadoPN" name="cb_estadoPN">
@@ -350,7 +389,7 @@
                                 <li id="metodoPagoPJ1">
                                     <div class="col-md-12 row" >
                                         <div class="col-md-7">
-                                            <select class="form-control" name="tipoPago[]" id="tipoPago" onchange="showDataTipoPagoPJ(this, 'metodoPagoPJ1')">
+                                            <select class="form-control" name="tipoPagoPJ[]" id="tipoPago" onchange="showDataTipoPagoPJ(this, 'metodoPagoPJ1')">
                                                 <option value="">Seleccione método de pago</option>
                                                 <option value="tdc">Tarjeta de Crédito</option>
                                                 <option value="tdd">Tarjeta de Débito</option>

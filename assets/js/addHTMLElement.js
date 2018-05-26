@@ -99,9 +99,11 @@ function showDataTipoPagoPJ(selectObject, id) {
     switch (selectObject.value){
         case 'tdc':
             if(hasPagosPJ == metodosPagoPJ){
-                hasPagosPJ = hasPagosPJ - 1;
-                document.getElementById("dataMPPJ"+hasPagosPJ).remove();
+                document.getElementById("dataMPPJ"+metodosPagoPJ).remove();
                 console.log("hasPagosPJ: "+hasPagosPJ);
+                console.log("metodosPagoPJ: "+metodosPagoPJ);
+            }else {
+                hasPagosPJ = hasPagosPJ + 1;
             }
 
             var newDiv = document.createElement("div");
@@ -121,14 +123,16 @@ function showDataTipoPagoPJ(selectObject, id) {
                 "</div>\n" +
                 "</div>";
 
-            hasPagosPJ = hasPagosPJ + 1;
             console.log("hasPagosPJ: "+hasPagosPJ);
+            console.log("metodosPagoPJ: "+metodosPagoPJ);
             break;
         case 'tdd':
             if(hasPagosPJ == metodosPagoPJ){
-                hasPagosPJ = hasPagosPJ - 1;
                 document.getElementById("dataMPPJ"+metodosPagoPJ).remove();
                 console.log("hasPagosPJ: "+hasPagosPJ);
+                console.log("metodosPagoPJ: "+metodosPagoPJ);
+            }else {
+                hasPagosPJ = hasPagosPJ + 1;
             }
 
             var newDiv = document.createElement("div");
@@ -142,14 +146,16 @@ function showDataTipoPagoPJ(selectObject, id) {
                 "</div>\n" +
                 "</div>";
 
-            hasPagosPJ = hasPagosPJ + 1;
             console.log("hasPagosPJ: "+hasPagosPJ);
+            console.log("metodosPagoPJ: "+metodosPagoPJ);
             break;
         case 'efe':
             if(hasPagosPJ == metodosPagoPJ){
-                hasPagosPJ = hasPagosPJ - 1;
                 document.getElementById("dataMPPJ"+metodosPagoPJ).remove();
                 console.log("hasPagosPJ: "+hasPagosPJ);
+                console.log("metodosPagoPJ: "+metodosPagoPJ);
+            }else {
+                hasPagosPJ = hasPagosPJ + 1;
             }
 
             var newDiv = document.createElement("div");
@@ -163,14 +169,16 @@ function showDataTipoPagoPJ(selectObject, id) {
                 "</div>\n" +
                 "</div>";
 
-            hasPagosPJ = hasPagosPJ + 1;
             console.log("hasPagosPJ: "+hasPagosPJ);
+            console.log("metodosPagoPJ: "+metodosPagoPJ);
             break;
         case 'che':
             if(hasPagosPJ == metodosPagoPJ){
-                hasPagosPJ = hasPagosPJ - 1;
                 document.getElementById("dataMPPJ"+metodosPagoPJ).remove();
                 console.log("hasPagosPJ: "+hasPagosPJ);
+                console.log("metodosPagoPJ: "+metodosPagoPJ);
+            } else {
+                hasPagosPJ = hasPagosPJ + 1;
             }
 
             var newDiv = document.createElement("div");
@@ -180,19 +188,22 @@ function showDataTipoPagoPJ(selectObject, id) {
             document.getElementById("dataMPPJ"+metodosPagoPJ).innerHTML = "" +
                 "<div class=\"col-md-12 row\">\n" +
                 "<div class=\"col-md-5\">\n" +
-                "<input type=\"text\" name=\"EFEPJ[]\" placeholder=\"Número de cuenta\" class=\"form-control\"/>\n" +
+                "<input type=\"text\" name=\"CHEPJ[]\" placeholder=\"Número de cuenta\" class=\"form-control\"/>\n" +
                 "</div>\n" +
                 "</div>";
 
-            hasPagosPJ = hasPagosPJ + 1;
             console.log("hasPagosPJ: "+hasPagosPJ);
+            console.log("metodosPagoPJ: "+metodosPagoPJ);
             break;
         default:
             if(hasPagosPJ == metodosPagoPJ){
+
+                hasPagosPJ = hasPagosPJ - 1;
                 document.getElementById("dataMPPJ"+metodosPagoPJ).remove();
+                console.log("metodosPagoPJ: "+metodosPagoPJ);
             }
-            hasPagosPJ = hasPagosPJ - 1;
             console.log("hasPagosPJ: "+hasPagosPJ);
+            console.log("metodosPagoPJ: "+metodosPagoPJ);
             break;
     }
 }
@@ -204,7 +215,7 @@ function addMetodoPagoPJ() {
         "<li id=\""+nameMetodoPagoPJ+"\">\n" +
         "<div class=\"col-md-12 row\" >\n" +
         "<div class=\"col-md-7\">\n" +
-        "<select class=\"form-control\" name=\"tipoPago[]\" id=\"tipoPago\" onchange=\"showDataTipoPagoPJ(this, '"+nameMetodoPagoPJ+"')\">\n" +
+        "<select class=\"form-control\" name=\"tipoPagoPJ[]\" id=\"tipoPago\" onchange=\"showDataTipoPagoPJ(this, '"+nameMetodoPagoPJ+"')\">\n" +
         "<option value=\"\">Seleccione método de pago</option>\n" +
         "<option value=\"tdc\">Tarjeta de Crédito</option>\n" +
         "<option value=\"tdd\">Tarjeta de Débito</option>\n" +
@@ -214,8 +225,8 @@ function addMetodoPagoPJ() {
         "</div>\n" +
         "</div>\n" +
         "</li>");
+
     metodosPagoPJ = metodosPagoPJ + 1;
-    hasPagosPJ = hasPagosPJ + 1;
     console.log("hasPagosPJ: "+hasPagosPJ);
 }
 
@@ -226,6 +237,160 @@ function remMetodoPagoPJ(id) {
         list.removeChild(list.lastChild);
         metodosPagoPJ = metodosPagoPJ - 1;
         hasPagosPJ = hasPagosPJ - 1;
+
+        console.log("hasPagosPJ : "+hasPagosPJ);
+        console.log("metodosPagoPJ: "+metodosPagoPJ);
     }
 }
 
+
+
+var metodosPagoPN = 1;
+var hasPagosPN = 0;
+function showDataTipoPagoPN(selectObject, id) {
+    switch (selectObject.value){
+        case 'tdc':
+            if(hasPagosPN == metodosPagoPN){
+                document.getElementById("dataMPPN"+metodosPagoPN).remove();
+                console.log("hasPagosPN: "+hasPagosPN);
+                console.log("metodosPagoPN: "+metodosPagoPN);
+            }else {
+                hasPagosPN = hasPagosPN + 1;
+            }
+
+            var newDiv = document.createElement("div");
+            newDiv.id = "dataMPPN"+metodosPagoPN;
+            var liFather = document.getElementById(id);
+            liFather.appendChild(newDiv);
+            document.getElementById("dataMPPN"+metodosPagoPN).innerHTML = "" +
+                "<div class=\"col-md-12 row\">\n" +
+                "<div class=\"col-md-5\">\n" +
+                "<input type=\"text\" name=\"TDCPN[]\" placeholder=\"Número Tarjeta\" class=\"form-control\"/>\n" +
+                "</div>\n" +
+                "<div class=\"col-md-3\">\n" +
+                "<input type=\"text\" name=\"TDCPN[]\" placeholder=\"Vencimiento\" class=\"form-control\"/>\n" +
+                "</div>\n" +
+                "<div class=\"col-md-2\">\n" +
+                "<input type=\"text\" name=\"TDCPN[]\" placeholder=\"CVV\" class=\"form-control\"/>\n" +
+                "</div>\n" +
+                "</div>";
+
+            console.log("hasPagosPN: "+hasPagosPN);
+            console.log("metodosPagoPN: "+metodosPagoPN);
+            break;
+        case 'tdd':
+            if(hasPagosPN == metodosPagoPN){
+                document.getElementById("dataMPPN"+metodosPagoPN).remove();
+                console.log("hasPagosPN: "+hasPagosPN);
+                console.log("metodosPagoPN: "+metodosPagoPN);
+            }else {
+                hasPagosPN = hasPagosPN + 1;
+            }
+
+            var newDiv = document.createElement("div");
+            newDiv.id = "dataMPPN"+metodosPagoPN;
+            var liFather = document.getElementById(id);
+            liFather.appendChild(newDiv);
+            document.getElementById("dataMPPN"+metodosPagoPN).innerHTML = "" +
+                "<div class=\"col-md-12 row\">\n" +
+                "<div class=\"col-md-5\">\n" +
+                "<input type=\"text\" name=\"TDDPN[]\" placeholder=\"Número Tarjeta\" class=\"form-control\"/>\n" +
+                "</div>\n" +
+                "</div>";
+
+            console.log("hasPagosPN: "+hasPagosPN);
+            console.log("metodosPagoPN: "+metodosPagoPN);
+            break;
+        case 'efe':
+            if(hasPagosPN == metodosPagoPN){
+                document.getElementById("dataMPPN"+metodosPagoPN).remove();
+                console.log("hasPagosPN: "+hasPagosPN);
+                console.log("metodosPagoPN: "+metodosPagoPN);
+            }else {
+                hasPagosPN = hasPagosPN + 1;
+            }
+
+            var newDiv = document.createElement("div");
+            newDiv.id = "dataMPPN"+metodosPagoPN;
+            var liFather = document.getElementById(id);
+            liFather.appendChild(newDiv);
+            document.getElementById("dataMPPN"+metodosPagoPN).innerHTML = "" +
+                "<div class=\"col-md-12 row\">\n" +
+                "<div class=\"col-md-5\">\n" +
+                "<input type=\"text\" name=\"EFEPN[]\" placeholder=\"Descripcción\" class=\"form-control\"/>\n" +
+                "</div>\n" +
+                "</div>";
+
+            console.log("hasPagosPN: "+hasPagosPN);
+            console.log("metodosPagoPN: "+metodosPagoPN);
+            break;
+        case 'che':
+            if(hasPagosPN == metodosPagoPN){
+                document.getElementById("dataMPPN"+metodosPagoPN).remove();
+                console.log("hasPagosPN: "+hasPagosPN);
+                console.log("metodosPagoPN: "+metodosPagoPN);
+            } else {
+                hasPagosPN = hasPagosPN + 1;
+            }
+
+            var newDiv = document.createElement("div");
+            newDiv.id = "dataMPPN"+metodosPagoPN;
+            var liFather = document.getElementById(id);
+            liFather.appendChild(newDiv);
+            document.getElementById("dataMPPN"+metodosPagoPN).innerHTML = "" +
+                "<div class=\"col-md-12 row\">\n" +
+                "<div class=\"col-md-5\">\n" +
+                "<input type=\"text\" name=\"CHEPN[]\" placeholder=\"Número de cuenta\" class=\"form-control\"/>\n" +
+                "</div>\n" +
+                "</div>";
+
+            console.log("hasPagosPN: "+hasPagosPN);
+            console.log("metodosPagoPN: "+metodosPagoPN);
+            break;
+        default:
+            if(hasPagosPN == metodosPagoPN){
+
+                hasPagosPN = hasPagosPN - 1;
+                document.getElementById("dataMPPN"+metodosPagoPN).remove();
+                console.log("metodosPagoPN: "+metodosPagoPN);
+            }
+            console.log("hasPagosPN: "+hasPagosPN);
+            console.log("metodosPagoPN: "+metodosPagoPN);
+            break;
+    }
+}
+
+function addMetodoPagoPN() {
+    var nameMetodoPagoPN = 'metodoPagoPN'+(metodosPagoPN+1);
+
+    $("#pagosPN").append("" +
+        "<li id=\""+nameMetodoPagoPN+"\">\n" +
+        "<div class=\"col-md-12 row\" >\n" +
+        "<div class=\"col-md-7\">\n" +
+        "<select class=\"form-control\" name=\"tipoPagoPN[]\" id=\"tipoPago\" onchange=\"showDataTipoPagoPN(this, '"+nameMetodoPagoPN+"')\">\n" +
+        "<option value=\"\">Seleccione método de pago</option>\n" +
+        "<option value=\"tdc\">Tarjeta de Crédito</option>\n" +
+        "<option value=\"tdd\">Tarjeta de Débito</option>\n" +
+        "<option value=\"efe\">Efectivo</option>\n" +
+        "<option value=\"che\">Cheque</option>\n" +
+        "</select>\n" +
+        "</div>\n" +
+        "</div>\n" +
+        "</li>");
+
+    metodosPagoPN = metodosPagoPN + 1;
+    console.log("hasPagosPN: "+hasPagosPN);
+}
+
+function remMetodoPagoPN(id) {
+    var list = document.getElementById(id);
+
+    if (list.hasChildNodes() && list.childElementCount > 1) {
+        list.removeChild(list.lastChild);
+        metodosPagoPN = metodosPagoPN - 1;
+        hasPagosPN = hasPagosPN - 1;
+
+        console.log("hasPagosPN : "+hasPagosPN);
+        console.log("metodosPagoPN: "+metodosPagoPN);
+    }
+}
