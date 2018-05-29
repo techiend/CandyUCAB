@@ -63,7 +63,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-3">
-                                        <input type="number" class="form-control" placeholder="%">
+                                        <input type="number" min="1" value="1" max="100" class="form-control" placeholder="%">
                                     </div>
                                 </div>
                             </div>

@@ -36,7 +36,7 @@
                     </thead>
                     <tbody>
                     <tr> <!-- Table Row -->
-                        <td width="270">Columna 1 - Fila 1</td> <!-- Table Data -->
+                        <td width="270"><a data-toggle="modal" data-target="#myModal"> Columna 1 - Fila 1</a></td> <!-- Table Data -->
                         <td width="5" class="text-center">Columna 2 - Fila 1</td> <!-- Table Data -->
                         <td width="5" class="text-center">Columna 3 - Fila 1</td>
                     </tr>
@@ -48,25 +48,39 @@
                     </tbody>
                 </table>
             </div>
-            <div class="row col-md-6">
-                <br>
-                <select class="col-md-6 form-control">
-                    <option value="-1">Selecciona un cliente</option>
-                </select>
-            </div>
-            <div class="row col-md-12">
-                <div class="col-md-6 col-md-push-8">
-                    <br>
-                    <br>
-                    <button class="btn btn-danger" type="submit">Eliminar</button>
-                    <button class="btn btn-warning" type="submit">Modificar</button>
-                    <button class="btn btn-success" type="submit">Información</button>
+        </div>
+    </div>
+</div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Some text in the modal.</p>
+                    <div class="row col-md-12">
+                        <div class="col-md-3 col-md-push-8">
+                            <br>
+                            <button class="btn btn-danger" type="submit">Eliminar</button>
+                            <button class="btn btn-warning" type="submit">Modificar</button>
+                            <button class="btn btn-success" type="submit">Información</button>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </body>
 
 {include file="../Overall/Footer.tpl"}
