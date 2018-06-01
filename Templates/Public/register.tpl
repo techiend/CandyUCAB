@@ -12,8 +12,6 @@
 {/php}
 
 
-<script src="assets/js/addHTMLElement.js"></script>
-
     <div class="jumbotron registerBox">
 
         <div class="form-group">
@@ -34,6 +32,10 @@
                         <div class="col-md-6">
                             <label>Cédula: </label>
                             <input type="text" name="ci" placeholder="Cédula" value="{php}if(isset($_GET['ci'])) echo $_GET['ci'];{/php}" class="form-control"/>
+                        </div>
+                        <div class="col-md-6">
+                            <label>RIF: </label>
+                            <input type="text" name="rif" placeholder="RIF" value="{php}if(isset($_GET['rif'])) echo $_GET['rif'];{/php}"  class="form-control"/>
                         </div>
                     </div>
                 </div>
@@ -73,31 +75,77 @@
 
                 <div class="col-md-12 registerData" style="margin-bottom: 20px;: ">
                     <div class="row">
-                        <ul class="registerData" id="personasContacto">
+                        <ul class="registerData" id="contactosPN">
                             <li>
-                                <div class="col-md-6">
-                                    <select class="form-control" disabled id="" name="">
-                                        <option value="">Teléfono</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" name="celphone" value="{php}if(isset($_GET['celphone'])) echo $_GET['celphone'];{/php}" placeholder="Teléfono" class="form-control"/>
+                                <div class="col-md-12 row">
+                                    <div class="col-md-6">
+                                        <select class="form-control" disabled name="tipoContactoPN[]">
+                                            <option value="Teléfono">Teléfono</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" name="contactoPN[]" value="{php}if(isset($_GET['celphone'])) echo $_GET['celphone'];{/php}" placeholder="Teléfono" class="form-control"/>
+                                    </div>
                                 </div>
                             </li>
                             <li>
-                                <div class="col-md-6">
-                                    <select class="form-control" disabled id="" name="">
-                                        <option value="">Correo Electrónico</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" name="email" placeholder="Correo Electrónico" class="form-control"/>
+                                <div class="col-md-12 row">
+                                    <div class="col-md-6">
+                                        <select class="form-control" disabled name="tipoContactoPN[]">
+                                            <option value="Correo Electrónico">Correo Electrónico</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" name="contactoPN[]" placeholder="Correo Electrónico" class="form-control"/>
+                                    </div>
                                 </div>
                             </li>
                         </ul>
                     </div>
+                    <div class="row col-md-1">
+                        <button onclick="remElementPN('contactosPN');" type="button" class="btn btn-danger" style="margin-top: 10px">-</button>
+                    </div>
                     <div class="row col-md-1 col-md-push-11">
-                        <button id="addContact" type="button" class="btn btn-primary" style="margin-top: 10px">+</button>
+                        <button onclick="addElementPN();" type="button" class="btn btn-primary" style="margin-top: 10px">+</button>
+                    </div>
+                </div>
+
+                <div>
+                    <hr>
+                </div>
+
+                <div class="col-md-12 registerData">
+                    <div class="row">
+                        <label>Métodos de Pago:</label>
+                    </div>
+                </div>
+
+                <div class="col-md-12 registerData" style="margin-bottom: 20px;: ">
+                    <div class="row">
+                        <div class="row">
+                            <ul class="registerData" id="pagosPN">
+                                <li id="metodoPagoPN1">
+                                    <div class="col-md-12 row" >
+                                        <div class="col-md-7">
+                                            <select class="form-control" name="tipoPagoPN[]" id="tipoPago" onchange="showDataTipoPagoPN(this, 'metodoPagoPN1')">
+                                                <option value="">Seleccione método de pago</option>
+                                                <option value="tdc">Tarjeta de Crédito</option>
+                                                <option value="tdd">Tarjeta de Débito</option>
+                                                <option value="efe">Efectivo</option>
+                                                <option value="che">Cheque</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="row col-md-1">
+                            <button onclick="remMetodoPagoPN('pagosPN');" type="button" class="btn btn-danger" style="margin-top: 10px">-</button>
+                        </div>
+                        <div class="row col-md-1 col-md-push-11">
+                            <button onclick="addMetodoPagoPN();" type="button" class="btn btn-primary" style="margin-top: 10px">+</button>
+                        </div>
                     </div>
                 </div>
 
@@ -235,41 +283,130 @@
 
                 <div class="col-md-12 registerData" style="margin-bottom: 20px;: ">
                     <div class="row">
-                        <ul class="registerData" id="personasContactoPJ">
-                            <li>
-                                <div class="col-md-6">
-                                    <select class="form-control" disabled id="" name="">
-                                        <option value="">Teléfono</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" name="celphone" placeholder="Teléfono" class="form-control"/>
-                                </div>
+                        <div class="row">
+                            <ul class="registerData" id="contactosPJ">
+                                <li>
+                                    <div class="col-md-12 row">
+                                        <div class="col-md-6">
+                                            <select class="form-control" disabled name="tipoContactoPJ[]">
+                                                <option value="Teléfono">Teléfono</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" name="contactoPJ[]" placeholder="Teléfono" class="form-control"/>
+                                        </div>
+                                    </div>
                                 </li>
-                            <li>
-                                <div class="col-md-6">
-                                    <select class="form-control" disabled id="" name="">
-                                        <option value="">Correo Electrónico</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" name="email" placeholder="Correo Electrónico" class="form-control"/>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="col-md-6">
-                                    <select class="form-control" disabled id="" name="">
-                                        <option value="">Página WEB</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" name="pweb" placeholder="Página WEB" class="form-control"/>
-                                </div>
-                            </li>
-                        </ul>
+                                <li>
+                                    <div class="col-md-12 row">
+                                        <div class="col-md-6">
+                                            <select class="form-control" disabled name="tipoContactoPJ[]">
+                                                <option value="Correo Electrónico">Correo Electrónico</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" name="contactoPJ[]" placeholder="Correo Electrónico" class="form-control"/>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="col-md-12 row">
+                                        <div class="col-md-6">
+                                            <select class="form-control" disabled name="tipoContactoPJ[]">
+                                                <option value="Página WEB">Página WEB</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" name="contactoPJ[]" placeholder="Página WEB" class="form-control"/>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
 
+                        <div class="row col-md-1">
+                            <button onclick="remElementPJ('contactosPJ');" type="button" class="btn btn-danger" style="margin-top: 10px">-</button>
+                        </div>
                         <div class="row col-md-1 col-md-push-11">
-                            <button id="addContactPJ" type="button" class="btn btn-primary" style="margin-top: 10px">+</button>
+                            <button onclick="addElementPJ();" type="button" class="btn btn-primary" style="margin-top: 10px">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <hr>
+                </div>
+
+                <div class="col-md-12 registerData">
+                    <div class="row">
+                        <label>Personas de Contacto:</label>
+                    </div>
+                </div>
+
+                <div class="col-md-12 registerData" style="margin-bottom: 20px;: ">
+                    <div class="row">
+                        <div class="row">
+                            <ul class="registerData" id="personasContactosPJ">
+                                <li>
+                                    <div class="col-md-12 row">
+                                        <div class="col-md-4">
+                                            <input type="text" name="personaContactoPJ[]" placeholder="Relación" class="form-control"/>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="text" name="personaContactoPJ[]" placeholder="Nombre" class="form-control"/>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="text" name="personaContactoPJ[]" placeholder="Apellido" class="form-control"/>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="row col-md-1">
+                            <button onclick="remPersonaContactoPJ('personasContactosPJ');" type="button" class="btn btn-danger" style="margin-top: 10px">-</button>
+                        </div>
+                        <div class="row col-md-1 col-md-push-11">
+                            <button onclick="addPersonaContactoPJ();" type="button" class="btn btn-primary" style="margin-top: 10px">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <hr>
+                </div>
+
+                <div class="col-md-12 registerData">
+                    <div class="row">
+                        <label>Métodos de Pago:</label>
+                    </div>
+                </div>
+
+                <div class="col-md-12 registerData" style="margin-bottom: 20px;: ">
+                    <div class="row">
+                        <div class="row">
+                            <ul class="registerData" id="pagosPJ">
+                                <li id="metodoPagoPJ1">
+                                    <div class="col-md-12 row" >
+                                        <div class="col-md-7">
+                                            <select class="form-control" name="tipoPagoPJ[]" id="tipoPago" onchange="showDataTipoPagoPJ(this, 'metodoPagoPJ1')">
+                                                <option value="">Seleccione método de pago</option>
+                                                <option value="tdc">Tarjeta de Crédito</option>
+                                                <option value="tdd">Tarjeta de Débito</option>
+                                                <option value="efe">Efectivo</option>
+                                                <option value="che">Cheque</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="row col-md-1">
+                            <button onclick="remMetodoPagoPJ('pagosPJ');" type="button" class="btn btn-danger" style="margin-top: 10px">-</button>
+                        </div>
+                        <div class="row col-md-1 col-md-push-11">
+                            <button onclick="addMetodoPagoPJ();" type="button" class="btn btn-primary" style="margin-top: 10px">+</button>
                         </div>
                     </div>
                 </div>
@@ -318,6 +455,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-md-12">
                     <div class="row">
                         <label>Dirección Fiscal Principal:</label>
@@ -401,6 +539,7 @@
                         <input type="submit" class="btn btn-success" value="Registrarse"/>
                     </div>
                 </div>
+
                 {if isset($errorPJ)}
                     <div class="alert alert-danger loginError" role="alert">{$errorPJ}</div>
                 {/if}
@@ -437,5 +576,7 @@
 
 <script src="assets/js/register.js"></script>
 <script src="assets/js/selectLugar.js"></script>
+<script src="assets/js/addHTMLElement.js"></script>
+
 
 {include file="../Overall/Footer.tpl"}
