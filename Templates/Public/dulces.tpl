@@ -10,6 +10,9 @@
                         <label>Código del cliente:</label>
                         <input type="text" name="clienteCod" placeholder="Código del cliente" class="form-control"/>
                     </div>
+                    <div class="col-md-4" style="margin-top: 5px">
+                        <input type="submit" class="btn btn-success" value="Validar cliente"/>
+                    </div>
                 </div>
             <form method="POST" name="addCaramelo" id="addCaramelo" action="dulces.php?modo=addCaramelo">
                 <div class="row" style="margin-top: 20px">
@@ -41,30 +44,34 @@
 
             <div class="row" style="margin-top: 30px">
                 <div class="col-md-10">
-                    <table class="table table-bordered">
+                    <table id="TablaDulces" class="table table-bordered">
                         <thead>
-                            <th width="190">Dulce</th>
-                            <th width="30" class="text-center">Cantidad</th>
-                            <th width="35" class="text-center">Precio U.</th>
-                            <th width="35" class="text-center">Precio T.</th>
+                            <th width="210">Dulce</th>
+                            <th width="70" class="text-center">Cantidad</th>
+                            <th width="70" class="text-center">Precio U.</th>
+                            <th width="70" class="text-center">Precio T.</th>
+                            <th width="1"></th>
                         </thead>
                         <tbody>
                             <!-- Aca empieza el llenado automatico -->
                             <tr>
-                                <td width="190">Dulce #1</td>
-                                <td width="30" class="text-center">Cantidad</td>
-                                <td width="35" class="text-right">Precio U.</td>
-                                <td width="35" class="text-right">Precio T.</td>
+                                <td width="210">Dulce #1</td>
+                                <td width="70" class="text-center" name="cant">Cantidad</td>
+                                <td width="70" class="text-right">Precio U.</td>
+                                <td width="70" class="text-right">Precio T.</td>
+                                <td width="1"><input type="submit" class="btn btn-danger borrarDulce" value="-" style="margin: 0px"/></td>
                             </tr>
                             <tr>
-                                <td width="190">Dulce #2</td>
-                                <td width="30" class="text-center">Cantidad</td>
-                                <td width="35" class="text-right">Precio U.</td>
-                                <td width="35" class="text-right">Precio T.</td>
+                                <td width="210">Dulce #2</td>
+                                <td width="70" class="text-center" name="cant">Cantidad</td>
+                                <td width="70" class="text-right">Precio U.</td>
+                                <td width="70" class="text-right">Precio T.</td>
+                                <td width="1"><input type="submit" class="btn btn-danger borrarDulce" value="-" style="margin: 0px"/></td>
                             </tr>
                             <!-- Aca termina el llenado automatico -->
                         </tbody>
                     </table>
+                    <ul class="pagination pagination-lg pager" id="PaginadorDulces"></ul>
                 </div>
             </div>
             <div class="row">
@@ -109,4 +116,14 @@
 </div>
 
 </body>
+
+<script>
+    {literal}
+    $(document).on('click', '.borrarDulce', function (event) {
+        event.preventDefault();
+        $(this).closest('tr').remove();
+    });
+    {/literal}
+</script>
+    
 {include file="../Overall/Footer.tpl"}
