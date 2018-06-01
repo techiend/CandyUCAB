@@ -62,21 +62,21 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title">Modal Header</h4>
                 </div>
-                <div class="modal-body">
-                    <p>Some text in the modal.</p>
-                    <div class="row col-md-12">
-                        <div class="col-md-3 col-md-push-8">
-                            <br>
-                            <button class="btn btn-danger" type="submit">Eliminar</button>
-                            <button class="btn btn-warning" type="submit">Modificar</button>
-                            <button class="btn btn-success" type="submit">Información</button>
+
+                <div class="col-md-12 contenedorSecundaria">
+                    <div class="col-md-12 columnaSecundaria">
+                        <div class="modal-body">
 
                         </div>
                     </div>
                 </div>
 
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button class="btn btn-danger" type="submit">Eliminar</button>
+                    <button class="btn btn-warning" type="submit">Modificar</button>
+                    <button class="btn btn-success" type="submit">Información</button>
                 </div>
             </div>
         </div>
