@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <HTML>
 <head>
-    <title>Prueba PHP - {$page_name}</title>
+    <title>CandyUCAB - {$page_name}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 

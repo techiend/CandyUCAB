@@ -1,0 +1,33 @@
+html{
+    margin: 0px;
+    padding: 0px;
+}
+
+.contenedorPrincipal{
+    margin-top: 30px;
+}
+.columna{
+    margin-bottom: 20px;
+}
+.tddizq{
+    margin-top: 50px;
+    border:1px solid;
+    width: 600px;
+}
+.tddder{
+    margin-top: 50px;
+    border:1px solid;
+    width: 100px;
+}
+.tddizq td{
+    border: 1px solid;
+    text-align: center;
+}
+.tddder th{
+    border: 1px solid;
+    text-align: center;
+}
+.tddd{
+    margin-left: 20px;
+}
+.btn

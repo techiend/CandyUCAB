@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2018-04-24 04:35:22
+/* Smarty version 3.1.30, created on 2018-05-21 03:41:09
   from "C:\xampp\htdocs\CandyUCAB\Templates\Overall\Navbar_classic.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5ade97eac62b15_35589276',
+  'unifunc' => 'content_5b0223b504a263_10878645',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fdc992ed69edf64011796a07fb2041aa512d0fea' => 
     array (
       0 => 'C:\\xampp\\htdocs\\CandyUCAB\\Templates\\Overall\\Navbar_classic.tpl',
-      1 => 1524195807,
+      1 => 1526854481,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5ade97eac62b15_35589276 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b0223b504a263_10878645 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <nav class="navbar navbar-default">
     <div class="container-fluid">
@@ -32,12 +32,12 @@ function content_5ade97eac62b15_35589276 (Smarty_Internal_Template $_smarty_tpl)
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="login.php">Brand</a>
+            <a class="navbar-brand" href="login.php">Login</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
+            <!--<ul class="nav navbar-nav">
                 <li><a href="#">Link <span class="sr-only">(current)</span></a></li>
                 <li><a href="#">Link</a></li>
                 <li class="dropdown">
@@ -52,7 +52,7 @@ function content_5ade97eac62b15_35589276 (Smarty_Internal_Template $_smarty_tpl)
                         <li><a href="#">One more separated link</a></li>
                     </ul>
                 </li>
-            </ul>
+            </ul>-->
 
             <?php if ($_smarty_tpl->tpl_vars['login']->value) {?>
                 <ul class="nav navbar-nav navbar-right">
