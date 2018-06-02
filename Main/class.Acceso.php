@@ -21,32 +21,15 @@ class Acceso {
 
         if ($resultQuery1['cod_Usuario'] != ''){
 
-//            switch ($resultQuery1['tipo_Usuario']){
-//                case 'CJ':
-//                    break;
-//                case 'CN':
-//                    break;
-//                case 'PP':
-//                    $query2 = $db->query("SELECT * FROM Personal WHERE '".$resultQuery1['cod_Usuario']."' = fk_Usuario");
-//                    $resultQuery2 = $db->result($query2);
-//                    session_start();
-//                    $_SESSION['user'] = $this->user;
-//                    $_SESSION['name'] = $resultQuery2['nombre_Personal'];
-//                    break;
-//            }
 
             session_start();
             $_SESSION['user'] = $this->user;
             $_SESSION['name'] = $this->user;
             $_SESSION['rol'] = $resultQuery1['fk_Rol'];
 
-            if ($resultQuery1['fk_Rol'] == 1)
-                header('location: admin.php');
-            else
-                header('location: index.php');
-            
+            header('location: admin.php');
         } else {
-            header('location: login.php?error=1'); // Usuario o Contraseña incorrectos
+            header('location: index.php?error=1'); // Usuario o Contraseña incorrectos
         }
     }
 
