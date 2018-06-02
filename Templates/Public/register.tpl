@@ -216,7 +216,7 @@
 
                 <div class="row">
                     <div class="col-md-4">
-                        <a href="login.php" type="button" class="btn btn-block btn-danger">Cancelar</a>
+                        <a href="index.php" type="button" class="btn btn-block btn-danger">Cancelar</a>
                     </div>
                     <div class="col-md-6 col-md-push-5">
                         <input type="submit" class="btn btn-success" value="Registrarse"/>
@@ -533,7 +533,7 @@
 
                 <div class="row">
                     <div class="col-md-4">
-                        <a href="login.php" type="button" class="btn btn-block btn-danger">Cancelar</a>
+                        <a href="index.php" type="button" class="btn btn-block btn-danger">Cancelar</a>
                     </div>
                     <div class="col-md-6 col-md-push-5">
                         <input type="submit" class="btn btn-success" value="Registrarse"/>
