@@ -18,13 +18,20 @@
         #echo 'Has iniciado sesion ',$_SESSION['name'];
         $template = new CandyUCAB();
         $template->assign(array(
-            'page_name' => 'Panel Administrativo',
+            'page_name' => 'Index',
             'login' => true,
             'name' => $_SESSION['name'],
             'user' => $_SESSION['user'],
-            'rol' => $_SESSION['rol']
+            'rol' => $_SESSION['rol'],
+            'menu'=>array(
+                '0'=>array(
+                    'nombre'=>'Dashboard',
+                    'href'=>'',
+                    'icon'=>''
+                )
+            )
         ));
-        $template->display("Public/admin.tpl");
+        $template->display("Public/index.tpl");
     }else {
         $template = new CandyUCAB();
         $template->assign(array(

@@ -8,6 +8,5 @@
         </div>
         <!-- /#page-wrapper -->
     </div>
-
 </body>
 {include file="../Overall/Footer.tpl"}
