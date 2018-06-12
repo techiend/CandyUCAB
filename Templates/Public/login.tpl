@@ -2,7 +2,7 @@
 
 <body>
     <div class="jumbotron loginBox">
-        <form method="POST" name="flogin" id="flogin" action="login.php?modo=login">
+        <form method="POST" name="flogin" id="flogin" action="index.php?modo=login">
             <label>Correo Electronico: </label>
             <input type="text" name="user" placeholder="Correo Electronico" class="form-control"/>
             <label>Contraseña: </label>

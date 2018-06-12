@@ -1,5 +1,6 @@
 <?php
 
+
     include ("Main/Comunes.php");
 
 
@@ -18,13 +19,13 @@
         #echo 'Has iniciado sesion ',$_SESSION['name'];
         $template = new CandyUCAB();
         $template->assign(array(
-            'page_name' => 'Panel Administrativo',
+            'page_name' => 'Dulces',
             'login' => true,
             'name' => $_SESSION['name'],
             'user' => $_SESSION['user'],
             'rol' => $_SESSION['rol']
         ));
-        $template->display("Public/admin.tpl");
+        $template->display("Public/dulces.tpl");
     }else {
         $template = new CandyUCAB();
         $template->assign(array(
