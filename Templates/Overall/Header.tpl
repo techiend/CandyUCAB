@@ -18,5 +18,14 @@
     <!-- jQuery -->
     <script type="text/javascript" src="assets/jquery/jquery.min.js"></script>
 
+    <link rel="stylesheet" type="text/css" href="assets/dataTable/jquery.dataTables.min.css" media="screen">
+
+    <script type="text/javascript" language="javascript" src="assets/dataTable/jquery-3.3.1.js"></script>
+    <script type="text/javascript" language="javascript" src="assets/dataTable/jquery.dataTables.min.js"></script>
+
+    {*<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.17/css/jquery.dataTables.min.css">*}
+
+    {*<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>*}
+    {*<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.17/js/jquery.dataTables.min.js"></script>*}
 
 </head>
