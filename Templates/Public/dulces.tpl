@@ -45,7 +45,8 @@
 
             <div class="row" style="margin-top: 30px">
                  <div class="col-md-10">
-                      <table id="tabla" class="display table table-bordered" style="width:100%">
+                     <table cellpadding="0" cellspacing="0" border="0" class="dataTable table table-striped" id="tabla">
+                      {*<table id="tabla" class="display table table-bordered" style="width:100%">*}
                           <thead>
                               <th width="210">Dulce</th>
                               <th width="70" class="text-center">Cantidad</th>
@@ -118,31 +119,47 @@
 </body>
 
 <script type="text/javascript">
+    $(document).ready(function() {
     {literal}
-    $(document).ready(function() {
-        $('#tabla').DataTable({
-            "searching": false
+
+        var myTable = $('#tabla').DataTable({
+            "sPaginationType": "full_numbers",
+            dom: 'Bfrtip',        // element order: NEEDS BUTTON CONTAINER (B) ****
+            select: 'single',     // enable single row selection
+            altEditor: true,      // Enable altEditor ****
+            buttons: [
+                {text: 'Agregar',name: 'add'},
+                {extend: 'selected',text: 'Editar',name: 'edit'},
+                {extend: 'selected',text: 'Eliminar',name: 'delete'}
+            ]
         });
-    } );
+    });
 
-    $(document).ready(function() {
-        var table = $('#tabla').DataTable();
 
-        $('#tabla tbody').on( 'click', 'tr', function () {
-            // if ( $(this).hasClass('selected') ) {
-            //     $(this).removeClass('selected');
-            // }
-            // else {
-            //     table.$('tr.selected').removeClass('selected');
-            //     $(this).addClass('selected');
-            // }
-            $(this).toggleClass('selected');
-        } );
 
-        $('#delete').click( function () {
-            table.rows('.selected').remove().draw( false );
-        } );
-    } );
+    // $(document).ready(function() {
+    //     $('#tabla').DataTable({
+    //         "searching": false
+    //     });
+    // } );
+    //
+
+
+
+    // $(document).ready(function() {
+    //     var table = $('#tabla').DataTable();
+    //
+    //     $('#tabla tbody').on( 'click', 'tr', function () {
+    //         if ( $(this).hasClass('selected') ) {
+    //             $(this).removeClass('selected');
+    //         }
+    //         else {
+    //             table.$('tr.selected').removeClass('selected');
+    //             $(this).addClass('selected');
+    //         }
+    //         // $(this).toggleClass('selected');
+    //     } );
+    // } );
 
     $(document).ready(function() {
         var t = $('#tabla').DataTable();
@@ -158,6 +175,16 @@
 
             counter++;
         } );
+
+        $('#delete').on('click', function () {
+            var data = t
+                .rows()
+                .data();
+
+
+            console.log(data[0][0])
+            alert( 'The table has ' + data.length + ' records' );
+        });
 
     } );
     {/literal}
