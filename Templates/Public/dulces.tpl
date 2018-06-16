@@ -1,5 +1,6 @@
 {include file="../Overall/Header.tpl"}
 
+
 <body>
 <div id="wrapper">
     {include file='../Overall/Navbar_admin.tpl'}
@@ -43,79 +44,151 @@
             </form>
 
             <div class="row" style="margin-top: 30px">
-                <div class="col-md-10">
-                    <table id="TablaDulces" class="table table-bordered">
-                        <thead>
-                            <th width="210">Dulce</th>
-                            <th width="70" class="text-center">Cantidad</th>
-                            <th width="70" class="text-center">Precio U.</th>
-                            <th width="70" class="text-center">Precio T.</th>
-                            <th width="1"></th>
-                        </thead>
-                        <tbody>
-                            <!-- Aca empieza el llenado automatico -->
-                            <tr>
-                                <td width="210">Dulce #1</td>
-                                <td width="70" class="text-center" name="cant">Cantidad</td>
-                                <td width="70" class="text-right">Precio U.</td>
-                                <td width="70" class="text-right">Precio T.</td>
-                                <td width="1"><input type="submit" class="btn btn-danger borrarDulce" value="-" style="margin: 0px"/></td>
-                            </tr>
-                            <tr>
-                                <td width="210">Dulce #2</td>
-                                <td width="70" class="text-center" name="cant">Cantidad</td>
-                                <td width="70" class="text-right">Precio U.</td>
-                                <td width="70" class="text-right">Precio T.</td>
-                                <td width="1"><input type="submit" class="btn btn-danger borrarDulce" value="-" style="margin: 0px"/></td>
-                            </tr>
-                            <!-- Aca termina el llenado automatico -->
-                        </tbody>
-                    </table>
-                    <ul class="pagination pagination-lg pager" id="PaginadorDulces"></ul>
-                </div>
+                 <div class="col-md-10">
+                     <table cellpadding="0" cellspacing="0" border="0" class="dataTable table table-striped" id="tabla">
+                      {*<table id="tabla" class="display table table-bordered" style="width:100%">*}
+                          <thead>
+                              <th width="210">Dulce</th>
+                              <th width="70" class="text-center">Cantidad</th>
+                              <th width="70" class="text-center">Precio U.</th>
+                              <th width="70" class="text-center">Precio T.</th>
+                          </thead>
+                          <tbody>
+                              {*<tr>*}
+                                  {*<td width="210">Dulce #1</td>*}
+                                  {*<td width="70" class="text-center" name="cant">Cantidad</td>*}
+                                  {*<td width="70" class="text-right">Precio U.</td>*}
+                                  {*<td width="70" class="text-right">Precio T.</td>*}
+                              {*</tr>*}
+                              {*<tr>*}
+                                  {*<td width="210">Dulce #2</td>*}
+                                  {*<td width="70" class="text-center" name="cant">Cantidad</td>*}
+                                  {*<td width="70" class="text-right">Precio U.</td>*}
+                                  {*<td width="70" class="text-right">Precio T.</td>*}
+                              {*</tr>*}
+                          </tbody>
+                      </table>
+                      <input type="submit" id="delete" class="btn btn-danger" value="-" style="margin: 0px"/>
+                      <input type="submit" id="add" class="btn btn-success" value="+" style="margin: 0px"/>
+                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-6 col-md-offset-5">
-                    <div class="row">
-                        <div class="col-md-4 text-right">
-                            <label>Sub-Total:</label>
-                        </div>
-                        <div class="col-md-6 text-right">
-                            Bs.S. 999.999.999,99
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row" style="margin-top: 5px">
-                <div class="col-md-6 col-md-offset-5">
-                    <div class="row">
-                        <div class="col-md-4 text-right">
-                            <label>Puntos:</label>
-                        </div>
-                        <div class="col-md-3 col-md-push-3">
-                            <input type="number" min="0" value="0" name="puntos" class="text-right form-control"/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row" style="margin-top: 5px">
-                <div class="col-md-6 col-md-offset-5">
-                    <div class="row">
-                        <div class="col-md-4 text-right">
-                            <label>Total:</label>
-                        </div>
-                        <div class="col-md-6 text-right">
-                            Bs.S. 999.999.999,99
-                        </div>
-                    </div>
-                </div>
-            </div>
+              <div class="row">
+                  <div class="col-md-6 col-md-offset-5">
+                      <div class="row">
+                          <div class="col-md-4 text-right">
+                              <label>Sub-Total:</label>
+                          </div>
+                          <div class="col-md-6 text-right">
+                              Bs.S. 999.999.999,99
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row" style="margin-top: 5px">
+                  <div class="col-md-6 col-md-offset-5">
+                      <div class="row">
+                          <div class="col-md-4 text-right">
+                              <label>Puntos:</label>
+                          </div>
+                          <div class="col-md-3 col-md-push-3">
+                              <input type="number" min="0" value="0" name="puntos" class="text-right form-control"/>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row" style="margin-top: 5px">
+                  <div class="col-md-6 col-md-offset-5">
+                      <div class="row">
+                          <div class="col-md-4 text-right">
+                              <label>Total:</label>
+                          </div>
+                          <div class="col-md-6 text-right">
+                              Bs.S. 999.999.999,99
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+
+
         </div>
     </div>
     <!-- /#page-wrapper -->
 </div>
 
 </body>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+    {literal}
+
+        var myTable = $('#tabla').DataTable({
+            "sPaginationType": "full_numbers",
+            dom: 'Bfrtip',        // element order: NEEDS BUTTON CONTAINER (B) ****
+            select: 'single',     // enable single row selection
+            altEditor: true,      // Enable altEditor ****
+            buttons: [
+                {text: 'Agregar',name: 'add'},
+                {extend: 'selected',text: 'Editar',name: 'edit'},
+                {extend: 'selected',text: 'Eliminar',name: 'delete'}
+            ]
+        });
+    });
+
+
+
+    // $(document).ready(function() {
+    //     $('#tabla').DataTable({
+    //         "searching": false
+    //     });
+    // } );
+    //
+
+
+
+    // $(document).ready(function() {
+    //     var table = $('#tabla').DataTable();
+    //
+    //     $('#tabla tbody').on( 'click', 'tr', function () {
+    //         if ( $(this).hasClass('selected') ) {
+    //             $(this).removeClass('selected');
+    //         }
+    //         else {
+    //             table.$('tr.selected').removeClass('selected');
+    //             $(this).addClass('selected');
+    //         }
+    //         // $(this).toggleClass('selected');
+    //     } );
+    // } );
+
+    $(document).ready(function() {
+        var t = $('#tabla').DataTable();
+        var counter = 1;
+
+        $('#add').on( 'click', function () {
+            t.row.add( [
+                'Dulce #' + counter,
+                'Cantidad',
+                'Precio U.',
+                'Precio T.'
+            ] ).draw( false );
+
+            counter++;
+        } );
+
+        $('#delete').on('click', function () {
+            var data = t
+                .rows()
+                .data();
+
+
+            console.log(data[0][0])
+            alert( 'The table has ' + data.length + ' records' );
+        });
+
+    } );
+    {/literal}
+</script>
 
 <script>
     {literal}
