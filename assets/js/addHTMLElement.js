@@ -149,52 +149,52 @@ function showDataTipoPagoPJ(selectObject, id) {
             console.log("hasPagosPJ: "+hasPagosPJ);
             console.log("metodosPagoPJ: "+metodosPagoPJ);
             break;
-        case 'efe':
-            if(hasPagosPJ == metodosPagoPJ){
-                document.getElementById("dataMPPJ"+metodosPagoPJ).remove();
-                console.log("hasPagosPJ: "+hasPagosPJ);
-                console.log("metodosPagoPJ: "+metodosPagoPJ);
-            }else {
-                hasPagosPJ = hasPagosPJ + 1;
-            }
-
-            var newDiv = document.createElement("div");
-            newDiv.id = "dataMPPJ"+metodosPagoPJ;
-            var liFather = document.getElementById(id);
-            liFather.appendChild(newDiv);
-            document.getElementById("dataMPPJ"+metodosPagoPJ).innerHTML = "" +
-                "<div class=\"col-md-12 row\">\n" +
-                "<div class=\"col-md-5\">\n" +
-                "<input type=\"text\" name=\"EFEPJ[]\" placeholder=\"Descripcción\" class=\"form-control\"/>\n" +
-                "</div>\n" +
-                "</div>";
-
-            console.log("hasPagosPJ: "+hasPagosPJ);
-            console.log("metodosPagoPJ: "+metodosPagoPJ);
-            break;
-        case 'che':
-            if(hasPagosPJ == metodosPagoPJ){
-                document.getElementById("dataMPPJ"+metodosPagoPJ).remove();
-                console.log("hasPagosPJ: "+hasPagosPJ);
-                console.log("metodosPagoPJ: "+metodosPagoPJ);
-            } else {
-                hasPagosPJ = hasPagosPJ + 1;
-            }
-
-            var newDiv = document.createElement("div");
-            newDiv.id = "dataMPPJ"+metodosPagoPJ;
-            var liFather = document.getElementById(id);
-            liFather.appendChild(newDiv);
-            document.getElementById("dataMPPJ"+metodosPagoPJ).innerHTML = "" +
-                "<div class=\"col-md-12 row\">\n" +
-                "<div class=\"col-md-5\">\n" +
-                "<input type=\"text\" name=\"CHEPJ[]\" placeholder=\"Número de cuenta\" class=\"form-control\"/>\n" +
-                "</div>\n" +
-                "</div>";
-
-            console.log("hasPagosPJ: "+hasPagosPJ);
-            console.log("metodosPagoPJ: "+metodosPagoPJ);
-            break;
+        // case 'efe':
+        //     if(hasPagosPJ == metodosPagoPJ){
+        //         document.getElementById("dataMPPJ"+metodosPagoPJ).remove();
+        //         console.log("hasPagosPJ: "+hasPagosPJ);
+        //         console.log("metodosPagoPJ: "+metodosPagoPJ);
+        //     }else {
+        //         hasPagosPJ = hasPagosPJ + 1;
+        //     }
+        //
+        //     var newDiv = document.createElement("div");
+        //     newDiv.id = "dataMPPJ"+metodosPagoPJ;
+        //     var liFather = document.getElementById(id);
+        //     liFather.appendChild(newDiv);
+        //     document.getElementById("dataMPPJ"+metodosPagoPJ).innerHTML = "" +
+        //         "<div class=\"col-md-12 row\">\n" +
+        //         "<div class=\"col-md-5\">\n" +
+        //         "<input type=\"text\" name=\"EFEPJ[]\" placeholder=\"Descripcción\" class=\"form-control\"/>\n" +
+        //         "</div>\n" +
+        //         "</div>";
+        //
+        //     console.log("hasPagosPJ: "+hasPagosPJ);
+        //     console.log("metodosPagoPJ: "+metodosPagoPJ);
+        //     break;
+        // case 'che':
+        //     if(hasPagosPJ == metodosPagoPJ){
+        //         document.getElementById("dataMPPJ"+metodosPagoPJ).remove();
+        //         console.log("hasPagosPJ: "+hasPagosPJ);
+        //         console.log("metodosPagoPJ: "+metodosPagoPJ);
+        //     } else {
+        //         hasPagosPJ = hasPagosPJ + 1;
+        //     }
+        //
+        //     var newDiv = document.createElement("div");
+        //     newDiv.id = "dataMPPJ"+metodosPagoPJ;
+        //     var liFather = document.getElementById(id);
+        //     liFather.appendChild(newDiv);
+        //     document.getElementById("dataMPPJ"+metodosPagoPJ).innerHTML = "" +
+        //         "<div class=\"col-md-12 row\">\n" +
+        //         "<div class=\"col-md-5\">\n" +
+        //         "<input type=\"text\" name=\"CHEPJ[]\" placeholder=\"Número de cuenta\" class=\"form-control\"/>\n" +
+        //         "</div>\n" +
+        //         "</div>";
+        //
+        //     console.log("hasPagosPJ: "+hasPagosPJ);
+        //     console.log("metodosPagoPJ: "+metodosPagoPJ);
+        //     break;
         default:
             if(hasPagosPJ == metodosPagoPJ){
 
@@ -219,8 +219,8 @@ function addMetodoPagoPJ() {
         "<option value=\"\">Seleccione método de pago</option>\n" +
         "<option value=\"tdc\">Tarjeta de Crédito</option>\n" +
         "<option value=\"tdd\">Tarjeta de Débito</option>\n" +
-        "<option value=\"efe\">Efectivo</option>\n" +
-        "<option value=\"che\">Cheque</option>\n" +
+        // "<option value=\"efe\">Efectivo</option>\n" +
+        // "<option value=\"che\">Cheque</option>\n" +
         "</select>\n" +
         "</div>\n" +
         "</div>\n" +
@@ -301,52 +301,52 @@ function showDataTipoPagoPN(selectObject, id) {
             console.log("hasPagosPN: "+hasPagosPN);
             console.log("metodosPagoPN: "+metodosPagoPN);
             break;
-        case 'efe':
-            if(hasPagosPN == metodosPagoPN){
-                document.getElementById("dataMPPN"+metodosPagoPN).remove();
-                console.log("hasPagosPN: "+hasPagosPN);
-                console.log("metodosPagoPN: "+metodosPagoPN);
-            }else {
-                hasPagosPN = hasPagosPN + 1;
-            }
-
-            var newDiv = document.createElement("div");
-            newDiv.id = "dataMPPN"+metodosPagoPN;
-            var liFather = document.getElementById(id);
-            liFather.appendChild(newDiv);
-            document.getElementById("dataMPPN"+metodosPagoPN).innerHTML = "" +
-                "<div class=\"col-md-12 row\">\n" +
-                "<div class=\"col-md-5\">\n" +
-                "<input type=\"text\" name=\"EFEPN[]\" placeholder=\"Descripcción\" class=\"form-control\"/>\n" +
-                "</div>\n" +
-                "</div>";
-
-            console.log("hasPagosPN: "+hasPagosPN);
-            console.log("metodosPagoPN: "+metodosPagoPN);
-            break;
-        case 'che':
-            if(hasPagosPN == metodosPagoPN){
-                document.getElementById("dataMPPN"+metodosPagoPN).remove();
-                console.log("hasPagosPN: "+hasPagosPN);
-                console.log("metodosPagoPN: "+metodosPagoPN);
-            } else {
-                hasPagosPN = hasPagosPN + 1;
-            }
-
-            var newDiv = document.createElement("div");
-            newDiv.id = "dataMPPN"+metodosPagoPN;
-            var liFather = document.getElementById(id);
-            liFather.appendChild(newDiv);
-            document.getElementById("dataMPPN"+metodosPagoPN).innerHTML = "" +
-                "<div class=\"col-md-12 row\">\n" +
-                "<div class=\"col-md-5\">\n" +
-                "<input type=\"text\" name=\"CHEPN[]\" placeholder=\"Número de cuenta\" class=\"form-control\"/>\n" +
-                "</div>\n" +
-                "</div>";
-
-            console.log("hasPagosPN: "+hasPagosPN);
-            console.log("metodosPagoPN: "+metodosPagoPN);
-            break;
+        // case 'efe':
+        //     if(hasPagosPN == metodosPagoPN){
+        //         document.getElementById("dataMPPN"+metodosPagoPN).remove();
+        //         console.log("hasPagosPN: "+hasPagosPN);
+        //         console.log("metodosPagoPN: "+metodosPagoPN);
+        //     }else {
+        //         hasPagosPN = hasPagosPN + 1;
+        //     }
+        //
+        //     var newDiv = document.createElement("div");
+        //     newDiv.id = "dataMPPN"+metodosPagoPN;
+        //     var liFather = document.getElementById(id);
+        //     liFather.appendChild(newDiv);
+        //     document.getElementById("dataMPPN"+metodosPagoPN).innerHTML = "" +
+        //         "<div class=\"col-md-12 row\">\n" +
+        //         "<div class=\"col-md-5\">\n" +
+        //         "<input type=\"text\" name=\"EFEPN[]\" placeholder=\"Descripcción\" class=\"form-control\"/>\n" +
+        //         "</div>\n" +
+        //         "</div>";
+        //
+        //     console.log("hasPagosPN: "+hasPagosPN);
+        //     console.log("metodosPagoPN: "+metodosPagoPN);
+        //     break;
+        // case 'che':
+        //     if(hasPagosPN == metodosPagoPN){
+        //         document.getElementById("dataMPPN"+metodosPagoPN).remove();
+        //         console.log("hasPagosPN: "+hasPagosPN);
+        //         console.log("metodosPagoPN: "+metodosPagoPN);
+        //     } else {
+        //         hasPagosPN = hasPagosPN + 1;
+        //     }
+        //
+        //     var newDiv = document.createElement("div");
+        //     newDiv.id = "dataMPPN"+metodosPagoPN;
+        //     var liFather = document.getElementById(id);
+        //     liFather.appendChild(newDiv);
+        //     document.getElementById("dataMPPN"+metodosPagoPN).innerHTML = "" +
+        //         "<div class=\"col-md-12 row\">\n" +
+        //         "<div class=\"col-md-5\">\n" +
+        //         "<input type=\"text\" name=\"CHEPN[]\" placeholder=\"Número de cuenta\" class=\"form-control\"/>\n" +
+        //         "</div>\n" +
+        //         "</div>";
+        //
+        //     console.log("hasPagosPN: "+hasPagosPN);
+        //     console.log("metodosPagoPN: "+metodosPagoPN);
+        //     break;
         default:
             if(hasPagosPN == metodosPagoPN){
 
@@ -371,8 +371,8 @@ function addMetodoPagoPN() {
         "<option value=\"\">Seleccione método de pago</option>\n" +
         "<option value=\"tdc\">Tarjeta de Crédito</option>\n" +
         "<option value=\"tdd\">Tarjeta de Débito</option>\n" +
-        "<option value=\"efe\">Efectivo</option>\n" +
-        "<option value=\"che\">Cheque</option>\n" +
+        // "<option value=\"efe\">Efectivo</option>\n" +
+        // "<option value=\"che\">Cheque</option>\n" +
         "</select>\n" +
         "</div>\n" +
         "</div>\n" +

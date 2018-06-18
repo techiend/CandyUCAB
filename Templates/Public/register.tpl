@@ -9,6 +9,7 @@
     $queryPJ = $query;
     $queryPJP = $query;
 
+    $queryTienda = $db->query("SELECT cod_Tienda, nombre_Tienda FROM tienda;");
 {/php}
 
 
@@ -27,6 +28,24 @@
         <div id="registerPN" value='registerPN'>
             <form method="POST" name="fregisterPN" id="fregisterPN" action="register.php?modo=registerPN">
                 <input type="hidden" name="registerPN" value="1"/>
+                <div class="col-md-12 registerData">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Tienda:</label>
+                            <select class="form-control" id="tiendaPN" name="tiendaPN">
+                            <option value="">Selecciona una tienda</option>
+                            {php}
+                                while($row = $queryTienda->fetch_assoc()){
+                            {/php}
+                            <option value="{php}echo $row['cod_Tienda'];{/php}">{php}echo utf8_encode($row['nombre_Tienda']);{/php}</option>
+                            {php}
+                                }
+                            {/php}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="col-md-12 registerData">
                     <div class="row">
                         <div class="col-md-6">
@@ -79,7 +98,7 @@
                             <li>
                                 <div class="col-md-12 row">
                                     <div class="col-md-6">
-                                        <select class="form-control" disabled name="tipoContactoPN[]">
+                                        <select class="form-control" name="tipoContactoPN[]">
                                             <option value="Teléfono">Teléfono</option>
                                         </select>
                                     </div>
@@ -91,7 +110,7 @@
                             <li>
                                 <div class="col-md-12 row">
                                     <div class="col-md-6">
-                                        <select class="form-control" disabled name="tipoContactoPN[]">
+                                        <select class="form-control" name="tipoContactoPN[]">
                                             <option value="Correo Electrónico">Correo Electrónico</option>
                                         </select>
                                     </div>
@@ -131,8 +150,8 @@
                                                 <option value="">Seleccione método de pago</option>
                                                 <option value="tdc">Tarjeta de Crédito</option>
                                                 <option value="tdd">Tarjeta de Débito</option>
-                                                <option value="efe">Efectivo</option>
-                                                <option value="che">Cheque</option>
+                                                {*<option value="efe">Efectivo</option>*}
+                                                {*<option value="che">Cheque</option>*}
                                             </select>
                                         </div>
                                     </div>
@@ -235,10 +254,28 @@
                 $db = new Conexion();
                 $query = $db->query("SELECT cod_Lugar, nombre_Lugar FROM lugar WHERE tipo_Lugar = 'Estado' ORDER BY nombre_Lugar ASC;");
 
+                $queryTienda = $db->query("SELECT cod_Tienda, nombre_Tienda FROM tienda;");
             {/php}
 
             <form method="POST" name="fregisterPJ" id="fregisterPJ" action="register.php?modo=registerPJ">
                 <input type="hidden" name="registerPJ" value="1"/>
+                <div class="col-md-12 registerData">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Tienda:</label>
+                            <select class="form-control" id="tiendaPJ" name="tiendaPJ">
+                                <option value="">Selecciona una tienda</option>
+                                {php}
+                                    while($row = $queryTienda->fetch_assoc()){
+                                {/php}
+                                <option value="{php}echo $row['cod_Tienda'];{/php}">{php}echo utf8_encode($row['nombre_Tienda']);{/php}</option>
+                                {php}
+                                    }
+                                {/php}
+                            </select>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-md-12 registerData">
                     <div class="row">
                         <div class="col-md-6">

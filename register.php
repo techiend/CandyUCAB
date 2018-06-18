@@ -88,26 +88,20 @@
                 if(!empty($_POST['ci'])){
                     if(!empty($_POST['name'])){
                         if(!empty($_POST['lname1'])){
-                            if(!empty($_POST['email']) && !empty($_POST['conf_email'])){
-                                if(!empty($_POST['celphone'])){
-                                    if(!empty($_POST['cb_parroquia'])){
-                                        if(!empty($_POST['user'])){
-                                            if(!empty($_POST['pass']) && !empty($_POST['conf_pass'])){
-                                                echo 'Realizar comprobaciones de datos y registrar';
-                                            }else{
-                                                header('location: register.php?errorPN=3&ci='.$_POST['ci'].'&name='.$_POST['name'].'&lname1='.$_POST['lname1'].'&lname2='.$_POST['lname2'].'&celphone='.$_POST['celphone'].'&user='.$_POST['user']); // Debes llenar el campo de contraseña
-                                            }
-                                        }else{
-                                            header('location: register.php?errorPN=4&ci='.$_POST['ci'].'&name='.$_POST['name'].'&lname1='.$_POST['lname1'].'&lname2='.$_POST['lname2'].'&celphone='.$_POST['celphone'].'&user='.$_POST['user']); // Debes llenar el campo de usuario
-                                        }
+                            if(!empty($_POST['cb_parroquiaPN'])){
+                                if(!empty($_POST['user'])){
+                                    if(!empty($_POST['pass']) && !empty($_POST['conf_pass'])){
+                                        echo 'Realizar comprobaciones de datos y registrar';
+                                        echo "<pre>";
+                                        print_r($_POST);
                                     }else{
-                                        header('location: register.php?errorPN=5&ci='.$_POST['ci'].'&name='.$_POST['name'].'&lname1='.$_POST['lname1'].'&lname2='.$_POST['lname2'].'&celphone='.$_POST['celphone'].'&user='.$_POST['user']); // Debes seleccionar tu dirección
+                                        header('location: register.php?errorPN=3&ci='.$_POST['ci'].'&name='.$_POST['name'].'&lname1='.$_POST['lname1'].'&lname2='.$_POST['lname2'].'&celphone='.$_POST['celphone'].'&user='.$_POST['user']); // Debes llenar el campo de contraseña
                                     }
                                 }else{
-                                    header('location: register.php?errorPN=6&ci='.$_POST['ci'].'&name='.$_POST['name'].'&lname1='.$_POST['lname1'].'&lname2='.$_POST['lname2'].'&celphone='.$_POST['celphone'].'&user='.$_POST['user']); // Debes llenar el campo de teléfono
+                                    header('location: register.php?errorPN=4&ci='.$_POST['ci'].'&name='.$_POST['name'].'&lname1='.$_POST['lname1'].'&lname2='.$_POST['lname2'].'&celphone='.$_POST['celphone'].'&user='.$_POST['user']); // Debes llenar el campo de usuario
                                 }
                             }else{
-                                header('location: register.php?errorPN=7&ci='.$_POST['ci'].'&name='.$_POST['name'].'&lname1='.$_POST['lname1'].'&lname2='.$_POST['lname2'].'&celphone='.$_POST['celphone'].'&user='.$_POST['user']); // Debes llenar el campo de correo electrónico
+                                header('location: register.php?errorPN=5&ci='.$_POST['ci'].'&name='.$_POST['name'].'&lname1='.$_POST['lname1'].'&lname2='.$_POST['lname2'].'&celphone='.$_POST['celphone'].'&user='.$_POST['user']); // Debes seleccionar tu dirección
                             }
                         }else{
                             header('location: register.php?errorPN=8&ci='.$_POST['ci'].'&name='.$_POST['name'].'&lname1='.$_POST['lname1'].'&lname2='.$_POST['lname2'].'&celphone='.$_POST['celphone'].'&user='.$_POST['user']); // Debes llenar el campo de apellido

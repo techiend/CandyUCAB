@@ -39,13 +39,12 @@ class Acceso {
 
         $resultQuery = $db->recorrer($query);
 
-        if($resultQuery['user_usuario'] == ''){
-            $db->query("INSERT INTO usuarios(user_usuario, psw_usuario, name_usuario, rol) VALUES ('$this->user', '$this->pass', '$this->name', 2);");
+        echo "<pre>";
+        echo $resultQuery;
+        die;
 
-            session_start();
-            $_SESSION['user'] = $this->user;
-            $_SESSION['name'] = $this->name;;
-            $_SESSION['rol'] = 2;
+        if($resultQuery['user_usuario'] == ''){
+
 
             header('location: index.php');
         } else {
