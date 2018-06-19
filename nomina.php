@@ -8,13 +8,13 @@ if (isset($_SESSION['user'])) {
     #echo 'Has iniciado sesion ',$_SESSION['name'];
     $template = new CandyUCAB();
     $template->assign(array(
-        'page_name' => 'Clientes',
+        'page_name' => 'Nomina',
         'login' => true,
         'name' => $_SESSION['name'],
         'user' => $_SESSION['user'],
         'rol' => $_SESSION['rol'],
         'tienda' => $_SESSION['tienda']
     ));
-    $template->display("Public/clientes.tpl");
+    $template->display("Public/nomina.tpl");
 }
 ?>
