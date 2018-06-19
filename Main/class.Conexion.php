@@ -25,6 +25,8 @@ class Conexion extends mysqli {
         }
 
         public function result($x){
+            echo '<pre>';
+            print_r($x);
             return mysqli_fetch_array($x);
         }
 

@@ -1,4 +1,4 @@
-<?php
+    <?php
 
     include ("Main/Comunes.php");
 
@@ -91,9 +91,13 @@
                             if(!empty($_POST['cb_parroquiaPN'])){
                                 if(!empty($_POST['user'])){
                                     if(!empty($_POST['pass']) && !empty($_POST['conf_pass'])){
-                                        echo 'Realizar comprobaciones de datos y registrar';
+//                                        echo 'Realizar comprobaciones de datos y registrar';
                                         echo "<pre>";
                                         print_r($_POST);
+
+                                        include("Main/class.Acceso.php");
+                                        $acceso = new Acceso($_POST['user'],$_POST['pass'],null);
+                                        $acceso->Register($_POST);
                                     }else{
                                         header('location: register.php?errorPN=3&ci='.$_POST['ci'].'&name='.$_POST['name'].'&lname1='.$_POST['lname1'].'&lname2='.$_POST['lname2'].'&celphone='.$_POST['celphone'].'&user='.$_POST['user']); // Debes llenar el campo de contraseña
                                     }

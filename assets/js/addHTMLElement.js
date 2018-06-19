@@ -265,13 +265,13 @@ function showDataTipoPagoPN(selectObject, id) {
             document.getElementById("dataMPPN"+metodosPagoPN).innerHTML = "" +
                 "<div class=\"col-md-12 row\">\n" +
                 "<div class=\"col-md-5\">\n" +
-                "<input type=\"text\" name=\"TDCPN[]\" placeholder=\"Número Tarjeta\" class=\"form-control\"/>\n" +
+                "<input type=\"text\" name=\"TDCPN[nro][]\" placeholder=\"Número Tarjeta\" class=\"form-control\"/>\n" +
                 "</div>\n" +
                 "<div class=\"col-md-3\">\n" +
-                "<input type=\"text\" name=\"TDCPN[]\" placeholder=\"Vencimiento\" class=\"form-control\"/>\n" +
+                "<input type=\"text\" name=\"TDCPN[vec][]\" placeholder=\"Vencimiento\" class=\"form-control\"/>\n" +
                 "</div>\n" +
                 "<div class=\"col-md-2\">\n" +
-                "<input type=\"text\" name=\"TDCPN[]\" placeholder=\"CVV\" class=\"form-control\"/>\n" +
+                "<input type=\"text\" name=\"TDCPN[cvv][]\" placeholder=\"CVV\" class=\"form-control\"/>\n" +
                 "</div>\n" +
                 "</div>";
 
