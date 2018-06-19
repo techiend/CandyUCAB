@@ -15,7 +15,7 @@
                         <input type="submit" class="btn btn-success" value="Validar cliente"/>
                     </div>
                 </div>
-            <form method="POST" name="addCaramelo" id="addCaramelo" action="dulces.php?modo=addCaramelo">
+            {*<form method="POST" name="addCaramelo" id="addCaramelo" action="dulces.php?modo=addCaramelo">*}
                 <div class="row" style="margin-top: 20px">
                     <div class="col-md-4">
                         <label>Selecciona un dulce:</label>
@@ -25,23 +25,16 @@
                     </div>
                 </div>
                 <div class="row" style="margin-top: 20px">
-                    <div class="col-md-4">
-                        <label>Selecciona un tipo:</label>
-                        <select class="form-control" id="cb_TipoDulce">
-                            <option value="">Selecciona un tipo</option>
-                        </select>
-                    </div>
-
-                    <div class="col-md-2 col-md-offset-1">
+                    <div class="col-md-2">
                         <label>Cantidad:</label>
                         <input type="number" min="1" value="1" name="cantidad" class="form-control"/>
                     </div>
 
                     <div class="col-md-4  col-md-offset-1" style="margin-top: 5px">
-                        <input type="submit" class="btn btn-info" value="Agregar Caramelo"/>
+                        <input type="submit" id="add" class="btn btn-info" value="Agregar Caramelo"/>
                     </div>
                 </div>
-            </form>
+            {*</form>*}
 
             <div class="row" style="margin-top: 30px">
                  <div class="col-md-10">
@@ -69,7 +62,7 @@
                           </tbody>
                       </table>
                       <input type="submit" id="delete" class="btn btn-danger" value="-" style="margin: 0px"/>
-                      <input type="submit" id="add" class="btn btn-success" value="+" style="margin: 0px"/>
+                      {*<input type="submit" id="add" class="btn btn-success" value="+" style="margin: 0px"/>*}
                  </div>
             </div>
               <div class="row">
@@ -142,6 +135,7 @@
         $('#add').on( 'click', function () {
             t.row.add( [
                 'Dulce #' + counter,
+
                 'Cantidad',
                 'Precio U.',
                 'Precio T.'
