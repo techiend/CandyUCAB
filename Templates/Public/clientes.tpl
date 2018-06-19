@@ -10,7 +10,7 @@
             <div class="col-md-12 columna">
                 <div class="row">
                     <div class="col-md-7">
-                        <input type="text" class="form-control" placeholder="Buscar por puntos">
+                        <input type="text" class="form-control" placeholder="Buscar por persona">
                     </div>
                     <div class="col-md-3">
                         <button class="btn btn-info" type="submit">Buscar</button>
