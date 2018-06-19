@@ -135,32 +135,6 @@
         });
     });
 
-
-
-    // $(document).ready(function() {
-    //     $('#tabla').DataTable({
-    //         "searching": false
-    //     });
-    // } );
-    //
-
-
-
-    // $(document).ready(function() {
-    //     var table = $('#tabla').DataTable();
-    //
-    //     $('#tabla tbody').on( 'click', 'tr', function () {
-    //         if ( $(this).hasClass('selected') ) {
-    //             $(this).removeClass('selected');
-    //         }
-    //         else {
-    //             table.$('tr.selected').removeClass('selected');
-    //             $(this).addClass('selected');
-    //         }
-    //         // $(this).toggleClass('selected');
-    //     } );
-    // } );
-
     $(document).ready(function() {
         var t = $('#tabla').DataTable();
         var counter = 1;
