@@ -19,15 +19,27 @@ class Acceso {
 
         $resultQuery1 = $db->result($query1);
 
-        echo '<pre>';
-        print_r($resultQuery1);
+//        echo '<pre>';
+//        print_r($resultQuery1);
 
         if (isset($resultQuery1['cod_Usuario'])){
+
+            if ($resultQuery1['fk_Personal'] != NULL){
+                $ci = $resultQuery1['fk_Personal'];
+                $queryT = $db->query("select fk_tienda from departamento where cod_Departamento = (select fk_Departamento from cargo_departamento where cod_CD = (select fk_CD from personal where ci_personal = $ci));");
+                $resultQueryT = $db->result($queryT);
+
+                $tienda = $resultQueryT['fk_tienda'];
+            }
 
             session_start();
             $_SESSION['user'] = $this->user;
             $_SESSION['name'] = $this->user;
             $_SESSION['rol'] = $resultQuery1['fk_Rol'];
+            $_SESSION['tienda'] = $tienda;
+
+
+
 
             header('location: admin.php');
         } else {
@@ -44,8 +56,8 @@ class Acceso {
 //        echo "SELECT user_usuario FROM usuario WHERE user_usuario = '".$data['user']."';";
         $resultQuery = $db->result($query);
 
-        echo '<pre>';
-        print_r($resultQuery);
+//        echo '<pre>';
+//        print_r($resultQuery);
 
         if(!isset($resultQuery['user_usuario'])){
             if($resultQuery['user_usuario'] != $data['user']){
@@ -55,8 +67,8 @@ class Acceso {
                     echo "SELECT cod_CN, CI_CN, RIF_CN FROM cliente_natural WHERE CI_CN = ".$data['ci']." OR RIF_CN = '".$data['rif']."';";
                     $resultQuery2 = $db->result($query2);
 
-                    echo '<pre>';
-                    print_r($resultQuery2);
+//                    echo '<pre>';
+//                    print_r($resultQuery2);
 
                     if (empty($resultQuery2)){
 
@@ -119,7 +131,7 @@ class Acceso {
                         }
 
 //                      Añado el usuario
-                        if($data['pass'] == $data['conf_pass']){        
+                        if($data['pass'] == $data['conf_pass']){
                             $pass = $data['pass'];
                             $db->query("INSERT INTO Usuario(user_Usuario, pass_Usuario, fk_Rol, fk_ClienteJ, fk_ClienteN, fk_Personal) VALUE ('$user', '$pass', 2, NULL, $idCN, NULL);");
                         }
@@ -142,7 +154,7 @@ class Acceso {
                     }
                 }
                 if(isset($data['registerPJ'])){
-
+                    echo 'Jeje, intenta mas tarde..... ';
                 }
             }else{
                 header('location: register.php?error=1'); // Usuario ya existe

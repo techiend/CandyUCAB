@@ -12,7 +12,8 @@ if (isset($_SESSION['user'])) {
         'login' => true,
         'name' => $_SESSION['name'],
         'user' => $_SESSION['user'],
-        'rol' => $_SESSION['rol']
+        'rol' => $_SESSION['rol'],
+        'tienda' => $_SESSION['tienda']
     ));
     $template->display("Public/inventario.tpl");
 }
