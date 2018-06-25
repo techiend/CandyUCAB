@@ -13,15 +13,26 @@
     {include file='../Overall/Navbar_admin.tpl'}
     <div id="page-wrapper">
         <div class="container">
-                <div class="row" style="margin-top: 20px">
-                    <div class="col-md-4">
-                        <label>Código del cliente:</label>
-                        <input type="text" name="clienteCod" placeholder="Código del cliente" class="form-control"/>
-                    </div>
-                    <div class="col-md-4" style="margin-top: 5px">
-                        <input type="submit" class="btn btn-success" value="Validar cliente"/>
-                    </div>
-                </div>
+                {*<div class="row" style="margin-top: 20px">*}
+                    {*<div class="col-md-4">*}
+                        {*<label>Código del cliente:</label>*}
+                        {*<input type="text" name="clienteCod" placeholder="Código del cliente" class="form-control"/>*}
+                    {*</div>*}
+                    {*<div class="col-md-4" style="margin-top: 5px">*}
+                        {*<input type="submit" class="btn btn-success" value="Validar cliente"/>*}
+                    {*</div>*}
+                {*</div>*}
+
+                {*<div class="row" style="margin-top: 5px;">*}
+                    {*<div class="col-md-4 form-group">*}
+                        {*<select class="form-control" id="tipoU">*}
+                            {*<option value="-1">Seleccione su tipo de Cliente</option>*}
+                            {*<option value="1">Cliente Natural</option>*}
+                            {*<option value="2">Cliente Juridico</option>*}
+                        {*</select>*}
+                    {*</div>*}
+                {*</div>*}
+
             {*<form method="POST" name="addCaramelo" id="addCaramelo" action="dulces.php?modo=addCaramelo">*}
                 <div class="row" style="margin-top: 20px">
                     <div class="col-md-4">
@@ -129,30 +140,60 @@
                         </div>
                         <div class="modal-body">
                             <form action="pagos.php" validate>
+
+                                <div class="row" style="margin-top: 20px">
+                                    <div class="col-md-4">
+                                        <label>Código del cliente:</label>
+                                        <input type="text" name="clienteCod" placeholder="Código del cliente" class="form-control"/>
+                                    </div>
+                                    {*<div class="col-md-4" style="margin-top: 5px">*}
+                                    {*<input type="submit" class="btn btn-success" value="Validar cliente"/>*}
+                                    {*</div>*}
+                                </div>
+
+                                <div class="row" style="margin-top: 5px;">
+                                    <div class="col-md-4 form-group">
+                                        <select class="form-control" id="tipoU">
+                                            <option value="-1">Seleccione su tipo de Cliente</option>
+                                            <option value="1">Cliente Natural</option>
+                                            <option value="2">Cliente Juridico</option>
+                                        </select>
+                                    </div>
+                                </div>
                                 <div class="row">
                                     <div class="col-xs-8">
                                         <div class="form-group">
                                             <label for="recipient-name" class="col-form-label">Monto total:</label>
-                                            <input name="Totalpagar" type="text" value="{(($Total - $Descuento) * 0.12) + ($Total - $Descuento)}" class="form-control" id="recipient-name" readonly>
+                                            <input name="stotalm" type="text" value="0" class="form-control" id="stotalm" readonly>
                                         </div>
                                     </div>
                                 </div>
                                 <div>
                                     <div class="row">
                                         <div class="col-xs-8">
-                                            <select name="Metodopago" required>
+                                            <select class="form-control" name="Metodopago" id="Metodopago" required>
                                                 <option disabled selected value="">Metodo de Pago </option>
-                                                <option value="TarjetaC"> Tarjeta de Credito </option>
-                                                <option value="TarjetaD">Tarjeta de Debito</option>
-                                                <option value="Cheque" >Cheque</option>
-                                                <option value="Efectivo">Efectivo</option>
+                                                <option value="TDC"> Tarjeta de Credito </option>
+                                                <option value="TDD">Tarjeta de Debito</option>
+                                                <option value="C">Cheque</option>
+                                                <option value="E">Efectivo</option>
                                             </select>
                                         </div>
                                     </div>
                                 </div>
 
-                                <input name="descuento" type="hidden" value="{$Descuento}" class="form-control" id="hidden-descuento" readonly>
-                                <input name="productosArray" type="hidden" value='{$ProductosToFactura}' class="form-control" id="hidden-descuento" readonly>
+                                <div>
+                                    <div class="row">
+                                        <div class="col-xs-8">
+                                            <select class="form-control" name="tarjeta" id="tarjeta" required>
+                                                <option value='-1'>Selecciona un método</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <input name="descuento" type="hidden" value="0" class="form-control" id="hidden-descuento" readonly>
+                                <input name="productosArray" type="hidden" value="0" class="form-control" id="hidden-descuento" readonly>
 
 
                         </div>
@@ -192,7 +233,7 @@
 
     $(document).ready(function() {
         var t = $('#tabla').DataTable();
-        var counter = 1;
+        var counter = 0;
 
         $('#add').on( 'click', function () {
             var dulce = $('#cb_Dulce').val();
@@ -271,6 +312,29 @@
     {/literal}
 </script>
 
+<script>
+    {literal}
+    $('#Metodopago').change(function () {
+        var tipoP = $(this).val();
+        var tipoU = $('tipoU').val();
+        var codU = $('clienteCod').val();
+
+        $.post("funcion.getMetodoPago.php", {tu:tipoU, cu: codU, tp: tipoP}, function (json) {
+            console.log(json);
+            if (json.ok === true) {
+
+                $('#tarjeta').html(json.tpl);
+
+            } else {
+                document.getElementById("tarjeta").length=0;
+                $('#tarjeta').html(json.tpl);
+            }
+        }, 'json');
+
+    });
+
+    {/literal}
+</script>
 
 <script src="assets/js/presupuesto.js"></script>
 

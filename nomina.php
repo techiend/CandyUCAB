@@ -17,7 +17,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             'name' => $_SESSION['name'],
             'user' => $_SESSION['user'],
             'rol' => $_SESSION['rol'],
-            'tienda' => $_SESSION['tienda']
+            'tienda' => $_SESSION['tienda'],
+            'codU' => $_SESSION['codU'],
+            'tipoU' => $_SESSION['tipoU']
         ));
         $template->display("Public/nomina.tpl");
     }
@@ -62,7 +64,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
             'name' => $_SESSION['name'],
             'user' => $_SESSION['user'],
             'rol' => $_SESSION['rol'],
-            'tienda' => $_SESSION['tienda']
+            'tienda' => $_SESSION['tienda'],
+            'codU' => $_SESSION['codU'],
+            'tipoU' => $_SESSION['tipoU']
         ));
         $template->display("Public/nomina.tpl");
 }

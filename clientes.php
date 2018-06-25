@@ -13,7 +13,9 @@ if (isset($_SESSION['user'])) {
         'name' => $_SESSION['name'],
         'user' => $_SESSION['user'],
         'rol' => $_SESSION['rol'],
-        'tienda' => $_SESSION['tienda']
+        'tienda' => $_SESSION['tienda'],
+        'codU' => $_SESSION['codU'],
+        'tipoU' => $_SESSION['tipoU']
     ));
     $template->display("Public/clientes.tpl");
 }

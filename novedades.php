@@ -12,7 +12,10 @@
             'login' => true,
             'name' => $_SESSION['name'],
             'user' => $_SESSION['user'],
-            'rol' => $_SESSION['rol']
+            'rol' => $_SESSION['rol'],
+            'codU' => $_SESSION['codU'],
+            'tienda' => $_SESSION['tienda'],
+            'tipoU' => $_SESSION['tipoU']
         ));
         $template->display("Public/novedades.tpl");
     }

@@ -38,6 +38,17 @@ class Acceso {
             $_SESSION['rol'] = $resultQuery1['fk_Rol'];
             $_SESSION['tienda'] = $tienda;
 
+            if ($resultQuery1['fk_ClienteJ'] != NULL){
+                $_SESSION['tipoU'] = 'CJ';
+                $_SESSION['codU'] = $resultQuery1['fk_ClienteJ'];
+            }
+            else if ($resultQuery1['fk_ClienteN'] != NULL){
+                $_SESSION['tipoU'] = 'CN';
+                $_SESSION['codU'] = $resultQuery1['fk_ClienteN'];
+            } else{
+                $_SESSION['tipoU'] = 'PP';
+                $_SESSION['codU'] = $resultQuery1['fk_Personal'];
+            }
 
 
 

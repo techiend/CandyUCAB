@@ -22,7 +22,9 @@
             'login' => true,
             'name' => $_SESSION['name'],
             'user' => $_SESSION['user'],
-            'rol' => $_SESSION['rol']
+            'rol' => $_SESSION['rol'],
+            'codU' => $_SESSION['codU'],
+            'tipoU' => $_SESSION['tipoU']
         ));
         $template->display("Public/admin.tpl");
     }else {
