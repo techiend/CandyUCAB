@@ -19,29 +19,33 @@
     <script type="text/javascript" src="assets/jquery/jquery.min.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 
-    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.1.2/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdn.datatables.net/select/1.1.2/js/dataTables.select.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.0.2/js/dataTables.responsive.min.js"></script>
+    {*<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>*}
+    {*<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>*}
+    {*<script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>*}
+    {*<script src="https://cdn.datatables.net/buttons/1.1.2/js/dataTables.buttons.min.js"></script>*}
+    {*<script src="https://cdn.datatables.net/select/1.1.2/js/dataTables.select.min.js"></script>*}
+    {*<script src="https://cdn.datatables.net/responsive/2.0.2/js/dataTables.responsive.min.js"></script>*}
 
-    {*<link rel="stylesheet" type="text/css" href="assets/dataTable/jquery.dataTables.min.css" media="screen">*}
-    {*<link rel="stylesheet" type="text/css" href="assets/dataTable/buttons.dataTables.min.css" media="screen">*}
-    {*<link rel="stylesheet" type="text/css" href="assets/dataTable/select.dataTables.min.css" media="screen">*}
-
-    {*<script type="text/javascript" language="javascript" src="assets/dataTable/jquery-3.3.1.js"></script>*}
-    {*<script type="text/javascript" language="javascript" src="assets/dataTable/jquery.dataTables.min.js"></script>*}
-
-    {*<script type="text/javascript" language="javascript" src="assets/dataTable/dataTables.buttons.min.js"></script>*}
-    {*<script type="text/javascript" language="javascript" src="assets/dataTable/dataTables.select.min.js"></script>*}
+    <script type="text/javascript" language="javascript" src="assets/dataTable/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" language="javascript" src="assets/dataTable/bootstrap.min.js"></script>
+    <script type="text/javascript" language="javascript" src="assets/dataTable/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" language="javascript" src="assets/dataTable/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" language="javascript" src="assets/dataTable/dataTables.select.min.js"></script>
+    <script type="text/javascript" language="javascript" src="assets/dataTable/dataTables.responsive.min.js"></script>
     <script type="text/javascript" language="javascript" src="assets/dataTable/dataTables.altEditor.js"></script>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/> 
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css"/>
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.1.2/css/buttons.dataTables.min.css"/>
-    <link rel="stylesheet" href="https://cdn.datatables.net/select/1.1.2/css/select.dataTables.min.css"/>
-    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.0.2/css/responsive.dataTables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/dataTable/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="assets/dataTable/jquery.dataTables.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="assets/dataTable/buttons.dataTables.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="assets/dataTable/select.dataTables.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="assets/dataTable/responsive.dataTables.min.css" media="screen">
+
+
+    {*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/> *}
+    {*<link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css"/>*}
+    {*<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.1.2/css/buttons.dataTables.min.css"/>*}
+    {*<link rel="stylesheet" href="https://cdn.datatables.net/select/1.1.2/css/select.dataTables.min.css"/>*}
+    {*<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.0.2/css/responsive.dataTables.min.css"/>*}
 
 
 </head>
